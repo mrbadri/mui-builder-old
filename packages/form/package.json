@@ -1,6 +1,6 @@
 {
   "name": "@mui-builder/form",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "production-ready foundational react component",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
