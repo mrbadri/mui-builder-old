@@ -1,3 +1,3 @@
-import HyperLink from './HyperLink/HyperLink'
+import HyperLink from './HyperLink/HyperLink';
 
-export { HyperLink }
+export { HyperLink };
