@@ -1,3 +1,4 @@
 import HyperLink from './HyperLink/HyperLink';
+import Fields from './Fields/Fields';
 
-export { HyperLink };
+export { HyperLink, Fields };

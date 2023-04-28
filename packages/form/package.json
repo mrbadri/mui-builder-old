@@ -1,6 +1,6 @@
 {
   "name": "@mui-builder/form",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "description": "production-ready foundational react component",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
@@ -9,7 +9,7 @@
     "build": "npm run build:esm && npm run build:cjs",
     "build:esm": "tsc",
     "build:cjs": "tsc --module commonjs --outDir dist/cjs",
-    "lint": "eslint \"{**/*,*}.{js, ts, jsx, tsx}\"",
+    "lint": "eslint \"src/**/*\"",
     "prettier": "prettier --write \"./{src,tests}/**/*.{js,ts,jsx,tsx}\"",
     "test": "jest --config jestconfig.json",
     "prepare": "npm run build",
@@ -58,5 +58,11 @@
     "react-dom": "18.2.0",
     "ts-jest": "29.1.0",
     "typescript": "5.0.4"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.10.8",
+    "@emotion/styled": "^11.10.8",
+    "@mui/material": "^5.12.2",
+    "@mui/system": "^5.12.1"
   }
 }
