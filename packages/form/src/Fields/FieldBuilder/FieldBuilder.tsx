@@ -10,11 +10,7 @@ const Controller: any = {
 const FieldBuilder = (props: TFieldBuilderProps) => {
   const Field = Controller?.[props?.type] ?? BaseInput;
 
-  return (
-    <div>
-      <Field {...props} />
-    </div>
-  );
+  return <Field {...props} />;
 };
 
 export default FieldBuilder;

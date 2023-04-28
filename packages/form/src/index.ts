@@ -1,4 +1,4 @@
-import HyperLink from './HyperLink/HyperLink';
 import Fields from './Fields/Fields';
+import FieldBuilder from './Fields/FieldBuilder/FieldBuilder';
 
-export { HyperLink, Fields };
+export { Fields, FieldBuilder };
