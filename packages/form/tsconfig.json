@@ -1,6 +1,6 @@
 {
-  "include": ["src", "src/HyperLink/HyperLink.test.tsx"],
-  "exclude": ["dist", "node_modules"],
+  "include": ["src"],
+  "exclude": ["dist", "node_modules", "**/*.test.ts", "**/*.test.tsx"],
   "compilerOptions": {
     "module": "ESNext",
     "lib": ["dom", "ESNext"],
@@ -19,7 +19,5 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "types": ["jest"] , 
   },
-  "typeAcquisition": { "include": ["jest"] }
 }

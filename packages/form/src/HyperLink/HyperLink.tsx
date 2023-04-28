@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 
-const HyperLink = (props: any) => {
+const HyperLink = (props: { href: string; children: ReactNode }) => {
   return (
     <>
       <a href={props.href}>{props.children}</a>
