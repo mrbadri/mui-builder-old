@@ -5,11 +5,6 @@
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/esm/index.d.ts",
-  "jest": {
-    "setupFilesAfterEnv": [
-      "./jest.setup.ts"
-    ]
-  },
   "scripts": {
     "build": "npm run build:esm && npm run build:cjs",
     "build:esm": "tsc",
@@ -36,6 +31,11 @@
     "LICENSE",
     "README.md"
   ],
+  "jest": {
+    "setupFilesAfterEnv": [
+      "./jest.setup.ts"
+    ]
+  },
   "devDependencies": {
     "@jest/globals": "^29.5.0",
     "@testing-library/jest-dom": "^5.16.5",
