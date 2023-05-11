@@ -26,12 +26,7 @@ const ElementBuilder = (props: any) => {
   };
   const Element = controller?.[props?.component];
 
-  return (
-    <>
-      {props.children}
-      {!!Element && <Element {...props} />}
-    </>
-  );
+  return <>{!!Element && <Element {...props} />}</>;
 };
 
 export default ElementBuilder;

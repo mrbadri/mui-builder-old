@@ -23,10 +23,20 @@ function App() {
     <div>
       {/* <Sections list={[1]} /> */}
       {/* <Elements list={elements} /> */}
-      <ElementBuilder component='sectionBuilder' element={{ component: 'slk', children: 'lkndsndmn-' }}>
-        test
+      <ElementBuilder
+        component='sectionBuilder'
+        element={{
+          component: 'sectionBuilder',
+          children: '- level 2',
+          element: {
+            component: 'sectionBuilder',
+            children: '- level 3',
+            element: { component: 'sectionBuilder', children: '- level 4' },
+          },
+        }}
+      >
+        level 1
       </ElementBuilder>
-      <ElementBuilder/>
     </div>
   );
 }
