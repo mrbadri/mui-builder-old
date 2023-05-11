@@ -1,4 +1,3 @@
-
 export enum ELEMENT_BUILDER {
   FIELDS = 'fields',
   FIELD_BUILDER = 'fieldBuilder',
@@ -10,5 +9,5 @@ export enum ELEMENT_BUILDER {
 }
 
 export interface ElementBuilderProps {
-  type: any;
+  component: any;
 }

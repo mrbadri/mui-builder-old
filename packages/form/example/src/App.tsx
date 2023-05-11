@@ -23,8 +23,10 @@ function App() {
     <div>
       {/* <Sections list={[1]} /> */}
       {/* <Elements list={elements} /> */}
-      <ElementBuilder type='sectionBuilder'></ElementBuilder>
-      {/* <ElementBuilder >test</ElementBuilder> */}
+      <ElementBuilder component='sectionBuilder' element={{ component: 'slk', children: 'lkndsndmn-' }}>
+        test
+      </ElementBuilder>
+      <ElementBuilder/>
     </div>
   );
 }

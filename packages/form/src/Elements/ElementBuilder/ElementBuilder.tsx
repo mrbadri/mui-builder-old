@@ -21,14 +21,17 @@ const ElementBuilder = (props: any) => {
     // Forms
     [ELEMENT_BUILDER.FORMS]: Forms,
     [ELEMENT_BUILDER.FORM_BUILDER]: FormBuilder,
-
     // Element
     [ELEMENT_BUILDER.ELEMENTS]: Elements,
   };
+  const Element = controller?.[props?.component];
 
-  const Element = controller?.[props?.type] ?? React.Fragment;
-
-  return <Element {...props} />;
+  return (
+    <>
+      {props.children}
+      {!!Element && <Element {...props} />}
+    </>
+  );
 };
 
 export default ElementBuilder;

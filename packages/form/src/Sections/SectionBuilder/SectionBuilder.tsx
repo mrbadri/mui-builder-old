@@ -2,7 +2,12 @@ import React from 'react';
 import Nested from '../../utils/Nested/Nested';
 
 const SectionBuilder = (props: any) => {
-  return <Nested>{props?.children || '--Sections 2Builder--'}</Nested>;
+  return (
+    <>
+      {props.children}
+      <Nested {...props} />
+    </>
+  );
 };
 
 export default SectionBuilder;
