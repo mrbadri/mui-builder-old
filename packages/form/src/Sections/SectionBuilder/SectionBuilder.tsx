@@ -1,7 +1,8 @@
 import React from 'react';
+import Nested from '../../utils/Nested/Nested';
 
-const SectionBuilder = (_props: any) => {
-  return <>Sections Builder</>;
+const SectionBuilder = (props: any) => {
+  return <Nested>{props?.children || '--Sections 2Builder--'}</Nested>;
 };
 
 export default SectionBuilder;

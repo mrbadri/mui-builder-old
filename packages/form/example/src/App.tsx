@@ -22,8 +22,9 @@ function App() {
   return (
     <div>
       {/* <Sections list={[1]} /> */}
-      <Elements list={elements} />
-      {/* <ElementBuilder type="sections" list={[1]}/> */}
+      {/* <Elements list={elements} /> */}
+      <ElementBuilder type='sectionBuilder'></ElementBuilder>
+      {/* <ElementBuilder >test</ElementBuilder> */}
     </div>
   );
 }

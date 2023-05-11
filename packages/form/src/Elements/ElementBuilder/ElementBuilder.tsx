@@ -26,7 +26,7 @@ const ElementBuilder = (props: any) => {
     [ELEMENT_BUILDER.ELEMENTS]: Elements,
   };
 
-  const Element = controller[props.type] ?? React.Fragment;
+  const Element = controller?.[props?.type] ?? React.Fragment;
 
   return <Element {...props} />;
 };
