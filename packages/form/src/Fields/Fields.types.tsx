@@ -1,6 +1,6 @@
 // #TODO: change types
 export interface TFieldsProps {
-  fields?: any;
+  list?: any;
   formik?: any;
   setSchema?: any;
 }

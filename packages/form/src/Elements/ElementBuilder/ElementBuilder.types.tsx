@@ -1,9 +1,13 @@
-export enum CHILDREN_TYPE {
+export enum ELEMENT_BUILDER {
   FIELDS = 'fields',
   FIELD_BUILDER = 'fieldBuilder',
   SECTIONS = 'sections',
   SECTION_BUILDER = 'sectionBuilder',
   FORMS = 'forms',
   FORM_BUILDER = 'formBuilder',
-  CHILDREN = 'children',
+  ELEMENTS = 'elements',
+}
+
+export interface ElementBuilderProps {
+  type: any;
 }

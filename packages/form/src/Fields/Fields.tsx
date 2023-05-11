@@ -5,9 +5,9 @@ import FieldBuilder from './FieldBuilder/FieldBuilder';
 import { TFieldProps } from './FieldBuilder/FieldBuilder.types';
 
 const Fields = (props: TFieldsProps) => {
-  if (!props?.fields) return <>Please Add fields</>;
+  if (!props?.list) return <>Please Add fields</>;
 
-  return props?.fields.map((FieldBuilderProps: TFieldProps, index: number) => (
+  return props?.list.map((FieldBuilderProps: TFieldProps, index: number) => (
     <FieldBuilder key={index} {...FieldBuilderProps} {...props} />
   ));
 };

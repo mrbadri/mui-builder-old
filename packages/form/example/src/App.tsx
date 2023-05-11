@@ -1,11 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
-import { Sections } from '@mui-builder/form';
+import { ElementBuilder, Elements, Sections } from '@mui-builder/form';
 
 function App() {
+  const elements = [
+    {
+      type: 'sections',
+      list: [1],
+      elements: [
+        {
+          type: 'sections',
+          list: [1],
+        },
+      ],
+      element: {
+        type: 'sections',
+        list: [1],
+      },
+    },
+  ];
+
   return (
     <div>
-      <Sections sections={[1, 2, 3, 4, 5, 6]} />
+      {/* <Sections list={[1]} /> */}
+      <Elements list={elements} />
+      {/* <ElementBuilder type="sections" list={[1]}/> */}
     </div>
   );
 }
