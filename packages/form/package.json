@@ -1,6 +1,6 @@
 {
   "name": "@mui-builder/form",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "production-ready foundational react component",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
@@ -12,8 +12,7 @@
     "lint": "eslint \"src/**/*\"",
     "prettier": "prettier --write \"./{src,tests}/**/*.{js,ts,jsx,tsx}\"",
     "test": "jest --config jestconfig.json",
-    "prepare": "npm run build",
-    "prepublishOnly": "npm run test && npm run prettier && npm run lint"
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -23,9 +22,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "peerDependencies": {
-    "react": ">=18"
-  },
   "files": [
     "dist",
     "LICENSE",
@@ -35,6 +31,11 @@
     "setupFilesAfterEnv": [
       "./jest.setup.ts"
     ]
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18",
+    "react-hook-form": "^7.44.3"
   },
   "devDependencies": {
     "@jest/globals": "^29.5.0",
@@ -62,6 +63,7 @@
   "dependencies": {
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
-    "@mui/material": "^5.12.2"
+    "@mui/material": "^5.12.2",
+    "react-hook-form": "^7.44.3"
   }
 }

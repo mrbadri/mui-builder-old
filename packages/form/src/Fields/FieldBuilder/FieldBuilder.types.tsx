@@ -1,3 +1,5 @@
+import { FieldValues, RegisterOptions } from 'react-hook-form';
+
 export interface TFieldBuilderProps {
   type: FIELD_TYPE;
 }
@@ -14,4 +16,12 @@ export enum FIELD_TYPE {
   TEXTAREA = 'textarea',
 }
 
-export type TFieldProps = any;
+export interface TFieldProps {
+  label: string;
+  type: string;
+  name: string;
+  rules:
+    | Omit<RegisterOptions<FieldValues, string>, 'disabled' | 'valueAsNumber' | 'valueAsDate' | 'setValueAs'>
+    | undefined;
+  controller?: string;
+}
