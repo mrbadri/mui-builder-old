@@ -1,23 +1,20 @@
 import React from 'react';
 
 import { TFieldsProps } from './Fields.types';
-// import FieldBuilder from './FieldBuilder/FieldBuilder';
 import { TFieldProps } from './FieldBuilder/FieldBuilder.types';
 import { Controller } from 'react-hook-form';
 import { TextField } from '@mui/material';
+import { getListWatch } from './Fields.tools';
 
 const Fields = ({ form, list }: TFieldsProps) => {
-  const { control, formState, watch } = form;
-
-  const controller = new Function('value', 'console.log(value)');
-
-  controller(watch());
+  const { control, formState, watch, getValues } = form;
+  
 
   return (
     <>
-      {list.map((fieldProps: TFieldProps, index: number) => (
+      {list.map((fieldProps: TFieldProps) => (
         <Controller
-          key={index}
+          key={fieldProps?.name}
           control={control}
           name={fieldProps?.name}
           rules={fieldProps?.rules}
@@ -28,12 +25,11 @@ const Fields = ({ form, list }: TFieldsProps) => {
               label={fieldProps?.label}
               onChange={(e) => {
                 field.onChange(e);
-                console.log('hi');
-                console.log('form', form, formState, formState.errors);
               }}
               error={!!formState.errors[field.name]}
+              onLoad={() => watch(getListWatch(fieldProps?.controller))}
               helperText={formState.errors[field.name]?.message as string}
-              {...new Function('fields', fieldProps?.controller || '')(watch())}
+              {...(!!fieldProps?.controller && new Function('fields', fieldProps?.controller || '')(getValues()))}
             />
           )}
         />

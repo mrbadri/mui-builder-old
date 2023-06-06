@@ -68,7 +68,21 @@ function App() {
             name: 'test',
             label: 'label',
             type: 'text',
-            controller: 'console.log(fields); if(fields.test === "12") return {sx:{bgcolor: "red"} , helperText: "salam"}',
+            // controller : 'console.log(fields); if(fields.test === "12") return {sx:{bgcolor: "red"} , helperText: "salam"}',
+            rules: { 
+              minLength: {
+                value: 10,
+                message: 'Minimum length is 10',
+              },
+              required: 'Email is required',
+            },
+          },
+
+          {
+            name: 'test3',
+            label: 'label',
+            type: 'text',
+            controller : 'console.log(fields); if(fields.test === "12") return {sx:{bgcolor: "red"} , helperText: "salam"}',
             rules: { 
               minLength: {
                 value: 10,
