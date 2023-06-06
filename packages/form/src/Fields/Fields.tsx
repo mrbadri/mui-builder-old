@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 
 import { TFieldsProps } from './Fields.types';
 import { TFieldProps } from './FieldBuilder/FieldBuilder.types';
 import { Controller } from 'react-hook-form';
 import { TextField } from '@mui/material';
-import { getListWatch } from './Fields.tools';
+import { getLIstWatch } from './Fields.tools';
 
 const Fields = ({ form, list }: TFieldsProps) => {
-  const { control, formState, watch, getValues } = form;
-  
+  const { control, formState, getValues , watch } = form;
+
+  const listWatch: any = useMemo(() => getLIstWatch(list), [list]);
+  watch(listWatch)
+
+
+  console.log('getValues():', getValues());
 
   return (
     <>
@@ -27,7 +32,6 @@ const Fields = ({ form, list }: TFieldsProps) => {
                 field.onChange(e);
               }}
               error={!!formState.errors[field.name]}
-              onLoad={() => watch(getListWatch(fieldProps?.controller))}
               helperText={formState.errors[field.name]?.message as string}
               {...(!!fieldProps?.controller && new Function('fields', fieldProps?.controller || '')(getValues()))}
             />

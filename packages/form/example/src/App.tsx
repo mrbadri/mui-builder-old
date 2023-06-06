@@ -82,7 +82,7 @@ function App() {
             name: 'test3',
             label: 'label',
             type: 'text',
-            controller : 'console.log(fields); if(fields.test === "12") return {sx:{bgcolor: "red"} , helperText: "salam"}',
+            // controller : 'console.log(fields); if(fields.test === "12") return {sx:{bgcolor: "red"} , helperText: "salam"}',
             rules: { 
               minLength: {
                 value: 10,
@@ -95,7 +95,7 @@ function App() {
             name: 'test2',
             label: 'label',
             type: 'text',
-            controller: 'console.log(fields); if(fields.test === "12") return {sx:{bgcolor: "red"} , helperText: "salam"}',
+            controller: 'console.log(fields); if(fields.test3 === "12") return {sx:{bgcolor: "red" , transition: "0.5s"} , helperText: "salam"}',
             rules: { 
               minLength: {
                 value: 10,
