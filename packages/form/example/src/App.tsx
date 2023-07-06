@@ -105,7 +105,7 @@ function App() {
             },
           },
         ]}
-        onSubmit={(e) => console.log('hi', e)}
+        onSubmit={(e:any) => console.log('hi', e)}
       />
 
       <MyForm />
