@@ -1,3 +1,5 @@
+import { TFieldProps } from "./FieldBuilder/FieldBuilder.types";
+
 export function getEffectiveFields(inputString: string = '', currentFieldName: string) {
     const regex = /fields\.(\w+)/g;
     let match;
@@ -13,13 +15,15 @@ export function getEffectiveFields(inputString: string = '', currentFieldName: s
 
 
 export const getLIstWatch = (fields: any) => {
-    let arr: any = [];
-    fields.map((field: any) => {
+    const arr: string[][] = [];
+
+    Object.keys(fields).map((key: string) => {
+        const field:TFieldProps = fields[key];
+
         if (!!field?.controller) {
             arr.push(getEffectiveFields(field?.controller, field.name));
         }
     });
-    console.log('flat', Array.from(new Set(arr.flat())));
 
     return Array.from(new Set(arr.flat()));
 }

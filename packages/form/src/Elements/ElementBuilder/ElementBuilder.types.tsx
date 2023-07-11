@@ -1,11 +1,11 @@
 export enum ELEMENT_BUILDER {
-  FIELDS = 'fields',
-  FIELD_BUILDER = 'fieldBuilder',
-  SECTIONS = 'sections',
-  SECTION_BUILDER = 'sectionBuilder',
-  FORMS = 'forms',
-  FORM_BUILDER = 'formBuilder',
-  ELEMENTS = 'elements',
+  FIELDS = 'Fields',
+  FIELD_BUILDER = 'FieldBuilder',
+  SECTIONS = 'Sections',
+  SECTION_BUILDER = 'SectionBuilder',
+  FORMS = 'Forms',
+  FORM_BUILDER = 'FormBuilder',
+  ELEMENTS = 'Elements',
 }
 
 export interface ElementBuilderProps {
