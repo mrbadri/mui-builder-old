@@ -17,8 +17,6 @@ const Fields = ({ form, list }: TFieldsProps) => {
       {Object.keys(list).map((key: string) =>  {
 
         const fieldProps: TFieldProps = list[key];
-        
-        
 
         return ( <Controller
           key={key}
@@ -26,8 +24,6 @@ const Fields = ({ form, list }: TFieldsProps) => {
           name={fieldProps?.name}
           rules={fieldProps?.rules}
           render={({ field }) => (
-<>
-{console.log(field)}
             <TextField
 
             {...field}
@@ -41,7 +37,6 @@ const Fields = ({ form, list }: TFieldsProps) => {
               helperText={formState.errors[field.name]?.message as string}
               {...(!!fieldProps?.controller && new Function('fields', fieldProps?.controller || '')(getValues()))}
             />
-</>
           )}
         />)
       })}

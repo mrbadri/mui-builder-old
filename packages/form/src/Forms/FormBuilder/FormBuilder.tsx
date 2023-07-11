@@ -9,6 +9,7 @@ import { TFormBuilderProps } from './FormBuilder.types';
 const FormBuilder: React.FC<TFormBuilderProps> = ({ fields, onSubmit }) => {
   const form = useForm();
 
+  
   return (
     <form onSubmit={form.handleSubmit(onSubmit)}>
       <Fields list={fields} form={form} />
