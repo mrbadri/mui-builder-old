@@ -84,9 +84,11 @@ function App() {
       >
         level 1
       </ElementBuilder> */}
+
+
       <FormBuilder
         fields={fieldTest}
-        onSubmit={console.log}
+        onSubmit={(res)=> console.log(res)}
       />
 
       {/* <MyForm /> */}

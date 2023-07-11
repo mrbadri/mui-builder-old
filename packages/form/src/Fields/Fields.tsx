@@ -25,9 +25,8 @@ const Fields = ({ form, list }: TFieldsProps) => {
           rules={fieldProps?.rules}
           render={({ field }) => (
             <TextField
-
             {...field}
-            value={field?.value || null}
+            value={field?.value || ''}
               {...fieldProps}
               label={fieldProps?.label}
               onChange={(e) => {
