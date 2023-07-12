@@ -1,7 +1,10 @@
-import { FieldValues, RegisterOptions } from 'react-hook-form';
+import { FieldValues, RegisterOptions, UseFormReturn } from 'react-hook-form';
 
 export interface TFieldBuilderProps {
   type: FIELD_TYPE;
+  form: UseFormReturn<FieldValues, any, undefined>;
+  // TODO: change type
+  name: string;
 }
 
 export enum FIELD_TYPE {
