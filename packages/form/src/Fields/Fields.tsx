@@ -28,8 +28,6 @@ const Fields = ({ form, list }: TFieldsProps) => {
                 name={fieldProps?.name}
                 rules={fieldProps?.rules}
                 render={({ field }) => {
-                  console.log({ field, fieldProps });
-
                   return (
                     <FieldBuilder
                       {...field}
