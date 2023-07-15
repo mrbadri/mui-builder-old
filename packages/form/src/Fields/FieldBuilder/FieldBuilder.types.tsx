@@ -9,6 +9,7 @@ export interface TFieldBuilderProps {
 
 export enum FIELD_TYPE {
   TEXT = 'text',
+  TEXTAREA = 'textarea',
   SELECT = 'select',
   MULTI_SELECT = 'multiSelect',
   DATE_PICK = 'datePicker',
@@ -16,7 +17,6 @@ export enum FIELD_TYPE {
   CHECKBOX = 'checkbox',
   RADIO = 'radio',
   TOGGLE = 'toggle',
-  TEXTAREA = 'textarea',
 }
 
 export interface TFieldProps {

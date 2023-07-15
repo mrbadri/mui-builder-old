@@ -18,7 +18,6 @@ const Fields = ({ form, list }: TFieldsProps) => {
       {Object.keys(list).map((key: string): any => {
         const fieldProps: TFieldProps = list[key];
         const controller = fieldProps?.controller && controllerFunction(fieldProps?.controller, getValues());
-
         if (!(!!controller && !!controller?.hide))
           return (
             <Controller
@@ -34,9 +33,7 @@ const Fields = ({ form, list }: TFieldsProps) => {
                     form={form}
                     value={field?.value || ''}
                     label={fieldProps?.label}
-                    onChange={(e: any) => {
-                      field.onChange(e);
-                    }}
+                    onChange={field.onChange}
                     error={!!formState.errors[field.name]}
                     helperText={formState.errors[field.name]?.message as string}
                     {...controller}

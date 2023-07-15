@@ -1,16 +1,18 @@
-import React, { useEffect } from 'react';
+import React, { forwardRef, useEffect } from 'react';
 
 import { FIELD_TYPE, TFieldBuilderProps } from './FieldBuilder.types';
 import BaseInput from './BaseInput/BaseInput';
 import Text from './Text/Text';
 import Textarea from './Textarea/Textarea';
+import RadioButton from './RadioButton/RadioButton';
 
 const Controller: any = {
   [FIELD_TYPE.TEXT]: Text,
   [FIELD_TYPE.TEXTAREA]: Textarea,
+  [FIELD_TYPE.RADIO]: RadioButton,
 };
 
-const FieldBuilder = (props: TFieldBuilderProps) => {
+const FieldBuilder = forwardRef((props: TFieldBuilderProps, ref) => {
   const Field = Controller?.[props?.type] ?? BaseInput;
   const { setValue } = props.form;
 
@@ -21,7 +23,7 @@ const FieldBuilder = (props: TFieldBuilderProps) => {
     };
   }, []);
 
-  return <Field {...props} />;
-};
+  return <Field {...props} ref={ref} />;
+});
 
 export default FieldBuilder;
