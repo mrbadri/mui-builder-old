@@ -1,7 +1,29 @@
+import axios, { AxiosResponse } from 'axios';
 import './App.css';
-import { ElementBuilder, FormBuilder } from '@mui-builder/form';
+import { ConfigProvider, FormBuilder } from '@mui-builder/form';
 
 // import MyForm from './Test/Test';
+
+const createAxiosInstance = (baseUrl?: string): any => {
+  if (!baseUrl) throw new Error('base url is required for running program!');
+  const instance = axios.create({
+    baseURL: baseUrl,
+  });
+
+  instance.interceptors.response.use(
+    (response: AxiosResponse) => {
+      return response;
+    },
+    (error: any) => {
+      if (error.response?.status === 401) {
+        console.log('401');
+      }
+      return Promise.reject(error);
+    },
+  );
+
+  return instance;
+};
 
 function App() {
   // const elements = [
@@ -22,8 +44,6 @@ function App() {
   // ];
 
   // TODO:
-  // 1. test controller how hide and shwo
-  // 2. if field hide => value empty
   // api
   // react query => version ?
   // controller => api call handle
@@ -92,8 +112,9 @@ function App() {
       </ElementBuilder> */}
 
       {/* <ElementBuilder component='FormBuilder' fields={fieldTest} onSubmit={(res: any) => console.log(res)} /> */}
-
-      <FormBuilder fields={fieldTest} onSubmit={(res: any) => console.log(res)} />
+      <ConfigProvider api={createAxiosInstance('https://jsonplaceholder.typicode.com')}>
+        <FormBuilder fields={fieldTest} onSubmit={(res: any) => console.log(res)} />
+      </ConfigProvider>
 
       {/* <MyForm /> */}
     </div>

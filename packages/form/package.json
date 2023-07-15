@@ -64,6 +64,8 @@
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.12.2",
-    "react-hook-form": "^7.44.3"
+    "axios": "^1.4.0",
+    "react-hook-form": "^7.44.3",
+    "zustand": "^4.3.9"
   }
 }
