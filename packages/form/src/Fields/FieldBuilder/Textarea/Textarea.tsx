@@ -1,8 +1,8 @@
-import { TextField } from '@mui/material';
 import React from 'react';
+import BaseInput from '../BaseInput/BaseInput';
 
 const Textarea = (props: any) => {
-  return <TextField multiline {...props} />;
+  return <BaseInput multiline {...props} />;
 };
 
 export default Textarea;
