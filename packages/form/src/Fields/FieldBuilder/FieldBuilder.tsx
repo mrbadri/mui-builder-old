@@ -2,9 +2,12 @@ import React, { useEffect } from 'react';
 
 import { FIELD_TYPE, TFieldBuilderProps } from './FieldBuilder.types';
 import BaseInput from './BaseInput/BaseInput';
+import Text from './Text/Text';
+import Textarea from './Textarea/Textarea';
 
 const Controller: any = {
-  [FIELD_TYPE.TEXT]: BaseInput,
+  [FIELD_TYPE.TEXT]: Text,
+  [FIELD_TYPE.TEXTAREA]: Textarea,
 };
 
 const FieldBuilder = (props: TFieldBuilderProps) => {
@@ -13,6 +16,7 @@ const FieldBuilder = (props: TFieldBuilderProps) => {
 
   useEffect(() => {
     return () => {
+      // INFO: for handle value when a component hide or show
       setValue(props?.name, null);
     };
   }, []);

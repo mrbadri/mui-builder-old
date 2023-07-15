@@ -64,17 +64,13 @@ function App() {
         required: 'Email is required',
       },
     },
-    test3: {
+    test1: {
       name: 'test3',
       label: 'test3',
-      type: 'text',
-      // controller : 'console.log(fields); if(fields.test === "12") return {sx:{bgcolor: "red"} , helperText: "salam"}',
+      type: 'textarea',
+      rows: '2',
       rules: {
-        // minLength: {
-        //   value: 10,
-        //   message: 'Minimum length is 10',
-        // },
-        required: 'Email is required',
+        required: 'is required',
       },
     },
     test2: {
