@@ -108,6 +108,20 @@ function App() {
         required: 'checkbox is required',
       },
     },
+    select: {
+      name: 'select',
+      label: 'select',
+      type: 'select',
+      rules: {
+        required: 'is required',
+      },
+      options: [
+        { label: 'hi1', id: 1 },
+        { label: 'hi2', id: 2 },
+        { label: 'hi3', id: 3 },
+        { label: 'hi4', id: 4 },
+      ],
+    },
   };
 
   return (

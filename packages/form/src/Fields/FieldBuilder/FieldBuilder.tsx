@@ -6,12 +6,14 @@ import Text from './Text/Text';
 import Textarea from './Textarea/Textarea';
 import RadioButton from './RadioButton/RadioButton';
 import Checkbox from './Checkbox/Checkbox';
+import Select from './Select/Select';
 
 const Controller: any = {
   [FIELD_TYPE.TEXT]: Text,
   [FIELD_TYPE.TEXTAREA]: Textarea,
   [FIELD_TYPE.RADIO]: RadioButton,
   [FIELD_TYPE.CHECKBOX]: Checkbox,
+  [FIELD_TYPE.SELECT]: Select,
 };
 
 const FieldBuilder = forwardRef((props: TFieldBuilderProps, ref) => {
