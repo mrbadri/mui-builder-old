@@ -5,11 +5,13 @@ import BaseInput from './BaseInput/BaseInput';
 import Text from './Text/Text';
 import Textarea from './Textarea/Textarea';
 import RadioButton from './RadioButton/RadioButton';
+import Checkbox from './Checkbox/Checkbox';
 
 const Controller: any = {
   [FIELD_TYPE.TEXT]: Text,
   [FIELD_TYPE.TEXTAREA]: Textarea,
   [FIELD_TYPE.RADIO]: RadioButton,
+  [FIELD_TYPE.CHECKBOX]: Checkbox,
 };
 
 const FieldBuilder = forwardRef((props: TFieldBuilderProps, ref) => {

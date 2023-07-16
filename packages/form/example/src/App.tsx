@@ -51,9 +51,9 @@ function App() {
   // zushtand => provider (optional)
 
   const fieldTest = {
-    test: {
-      name: 'test',
-      label: 'test',
+    text: {
+      name: 'text',
+      label: 'text',
       type: 'text',
       // controller : 'console.log(fields); if(fields.test === "12") return {sx:{bgcolor: "red"} , helperText: "salam"}',
       rules: {
@@ -64,33 +64,58 @@ function App() {
         required: 'Email is required',
       },
     },
-    test1: {
-      name: 'test3',
-      label: 'test3',
+    textarea: {
+      name: 'textarea',
+      label: 'textarea',
       type: 'textarea',
       rows: '2',
       rules: {
-        required: 'is required',
+        required: 'textarea is required',
       },
     },
-    test2: {
-      name: 'test2',
-      label: 'test2',
-      type: 'text',
-      controller:
-        'if(fields.test3 === "12") return {sx:{bgcolor: "red" , transition: "0.5s"} , helperText: fields.test3, hide:true}',
+    radio: {
+      name: 'radio',
+      label: 'radio',
+      type: 'radio',
       rules: {
-        // minLength: {
-        //   value: 10,
-        //   message: 'Minimum length is 10',
-        // },
-        required: 'Email is required',
+        required: 'radio is required',
+      },
+      row: true,
+      options: [
+        {
+          label: 'r1',
+          value: 'val1',
+        },
+        {
+          label: 'r2',
+          value: 'val2',
+        },
+      ],
+    },
+    checkbox: {
+      name: 'checkbox1',
+      label: 'checkbox1',
+      type: 'checkbox',
+      rules: {
+        required: 'checkbox is required',
+      },
+    },
+    checkbox2: {
+      name: 'checkbox2',
+      label: 'checkbox2',
+      type: 'checkbox',
+      rules: {
+        required: 'checkbox is required',
       },
     },
   };
 
   return (
-    <div>
+    <>
+      <ConfigProvider api={createAxiosInstance('https://jsonplaceholder.typicode.com')}>
+        <FormBuilder fields={fieldTest} onSubmit={(res: any) => console.log(res)} />
+      </ConfigProvider>
+
       {/* <ElementBuilder
         component='SectionBuilder'
         element={{
@@ -105,15 +130,11 @@ function App() {
         }}
       >
         level 1
-      </ElementBuilder> */}
+      </ElementBuilder>
 
-      {/* <ElementBuilder component='FormBuilder' fields={fieldTest} onSubmit={(res: any) => console.log(res)} /> */}
-      <ConfigProvider api={createAxiosInstance('https://jsonplaceholder.typicode.com')}>
-        <FormBuilder fields={fieldTest} onSubmit={(res: any) => console.log(res)} />
-      </ConfigProvider>
-
-      {/* <MyForm /> */}
-    </div>
+      <ElementBuilder component='FormBuilder' fields={fieldTest} onSubmit={(res: any) => console.log(res)} />
+      <MyForm /> */}
+    </>
   );
 }
 
