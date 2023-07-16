@@ -7,6 +7,7 @@ import Textarea from './Textarea/Textarea';
 import RadioButton from './RadioButton/RadioButton';
 import Checkbox from './Checkbox/Checkbox';
 import Select from './Select/Select';
+import MultiSelect from './MultiSelect/MultiSelect';
 
 const Controller: any = {
   [FIELD_TYPE.TEXT]: Text,
@@ -14,6 +15,7 @@ const Controller: any = {
   [FIELD_TYPE.RADIO]: RadioButton,
   [FIELD_TYPE.CHECKBOX]: Checkbox,
   [FIELD_TYPE.SELECT]: Select,
+  [FIELD_TYPE.MULTI_SELECT]: MultiSelect,
 };
 
 const FieldBuilder = forwardRef((props: TFieldBuilderProps, ref) => {

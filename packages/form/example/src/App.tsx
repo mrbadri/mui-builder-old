@@ -116,10 +116,24 @@ function App() {
         required: 'is required',
       },
       options: [
-        { label: 'hi1', id: 1 },
-        { label: 'hi2', id: 2 },
-        { label: 'hi3', id: 3 },
-        { label: 'hi4', id: 4 },
+        { label: 'hi1', value: 1 },
+        { label: 'hi2', value: 2 },
+        { label: 'hi3', value: 3 },
+        { label: 'hi4', value: 4 },
+      ],
+    },
+    mutliSelect: {
+      name: 'multi-select',
+      label: 'select',
+      type: 'multiSelect',
+      rules: {
+        required: 'is required',
+      },
+      options: [
+        { label: 'hi1', value: 1 },
+        { label: 'hi2', value: 2 },
+        { label: 'hi3', value: 3 },
+        { label: 'hi4', value: 4 },
       ],
     },
   };
