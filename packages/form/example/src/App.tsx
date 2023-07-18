@@ -136,6 +136,16 @@ function App() {
         { label: 'hi4', value: 4 },
       ],
     },
+    attachment: {
+      name: 'attachment',
+      label: 'attachment',
+      type: 'attachment',
+      multiple: true,
+      // controller : 'console.log(fields); if(fields.test === "12") return {sx:{bgcolor: "red"} , helperText: "salam"}',
+      rules: {
+        required: 'Email is required',
+      },
+    },
   };
 
   return (
