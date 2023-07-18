@@ -12,7 +12,7 @@ export enum FIELD_TYPE {
   TEXTAREA = 'textarea',
   SELECT = 'select',
   MULTI_SELECT = 'multiSelect',
-  DATE_PICK = 'datePicker',
+  DATE_PICKER = 'datepicker',
   ATTACHEMNT = 'attachment',
   CHECKBOX = 'checkbox',
   RADIO = 'radio',

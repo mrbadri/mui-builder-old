@@ -66,6 +66,7 @@
     "@mui/material": "^5.12.2",
     "axios": "^1.4.0",
     "react-hook-form": "^7.44.3",
+    "react-multi-date-picker": "^4.1.2",
     "tslib": "^2.6.0",
     "zustand": "^4.3.9"
   }

@@ -57,10 +57,10 @@ function App() {
       type: 'text',
       // controller : 'console.log(fields); if(fields.test === "12") return {sx:{bgcolor: "red"} , helperText: "salam"}',
       rules: {
-        minLength: {
-          value: 10,
-          message: 'Minimum length is 10',
-        },
+        // minLength: {
+        //   value: 10,
+        //   message: 'Minimum length is 10',
+        // },
         required: 'Email is required',
       },
     },
@@ -70,7 +70,7 @@ function App() {
       type: 'textarea',
       rows: '2',
       rules: {
-        required: 'textarea is required',
+        // required: 'textarea is required',
       },
     },
     radio: {
@@ -78,7 +78,7 @@ function App() {
       label: 'radio',
       type: 'radio',
       rules: {
-        required: 'radio is required',
+        // required: 'radio is required',
       },
       row: true,
       options: [
@@ -97,7 +97,7 @@ function App() {
       label: 'checkbox1',
       type: 'checkbox',
       rules: {
-        required: 'checkbox is required',
+        // required: 'checkbox is required',
       },
     },
     checkbox2: {
@@ -105,7 +105,7 @@ function App() {
       label: 'checkbox2',
       type: 'checkbox',
       rules: {
-        required: 'checkbox is required',
+        // required: 'checkbox is required',
       },
     },
     select: {
@@ -113,7 +113,7 @@ function App() {
       label: 'select',
       type: 'select',
       rules: {
-        required: 'is required',
+        // required: 'is required',
       },
       options: [
         { label: 'hi1', value: 1 },
@@ -127,7 +127,7 @@ function App() {
       label: 'select',
       type: 'multiSelect',
       rules: {
-        required: 'is required',
+        // required: 'is required',
       },
       options: [
         { label: 'hi1', value: 1 },
@@ -143,7 +143,20 @@ function App() {
       multiple: true,
       // controller : 'console.log(fields); if(fields.test === "12") return {sx:{bgcolor: "red"} , helperText: "salam"}',
       rules: {
-        required: 'Email is required',
+        // required: 'attachment is required',
+      },
+    },
+    datepicker: {
+      name: 'datepicker',
+      label: 'datepicker',
+      type: 'datepicker',
+      calendarPosition: 'bottom-right',
+      value: new Date(),
+      format: 'YYYY/MM/DD',
+      locale: 'fa',
+      // controller : 'console.log(fields); if(fields.test === "12") return {sx:{bgcolor: "red"} , helperText: "salam"}',
+      rules: {
+        required: 'Date is required',
       },
     },
   };

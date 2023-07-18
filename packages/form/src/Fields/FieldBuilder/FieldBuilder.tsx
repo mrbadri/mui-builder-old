@@ -9,6 +9,7 @@ import Checkbox from './Checkbox/Checkbox';
 import Select from './Select/Select';
 import MultiSelect from './MultiSelect/MultiSelect';
 import File from './File/File';
+import Datepicker from './Datepicker/Datepicker';
 
 const Controller: any = {
   [FIELD_TYPE.TEXT]: Text,
@@ -18,6 +19,7 @@ const Controller: any = {
   [FIELD_TYPE.SELECT]: Select,
   [FIELD_TYPE.MULTI_SELECT]: MultiSelect,
   [FIELD_TYPE.ATTACHEMNT]: File,
+  [FIELD_TYPE.DATE_PICKER]: Datepicker,
 };
 
 const FieldBuilder = forwardRef((props: TFieldBuilderProps, ref) => {
