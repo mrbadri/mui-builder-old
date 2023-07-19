@@ -10,6 +10,7 @@ import Select from './Select/Select';
 import MultiSelect from './MultiSelect/MultiSelect';
 import File from './File/File';
 import Datepicker from './Datepicker/Datepicker';
+import Toggle from './Toggle/Toggle';
 
 const Controller: any = {
   [FIELD_TYPE.TEXT]: Text,
@@ -20,6 +21,7 @@ const Controller: any = {
   [FIELD_TYPE.MULTI_SELECT]: MultiSelect,
   [FIELD_TYPE.ATTACHEMNT]: File,
   [FIELD_TYPE.DATE_PICKER]: Datepicker,
+  [FIELD_TYPE.TOGGLE]: Toggle,
 };
 
 const FieldBuilder = forwardRef((props: TFieldBuilderProps, ref) => {

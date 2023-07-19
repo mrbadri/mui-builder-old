@@ -157,6 +157,16 @@ function App() {
         required: 'Date is required',
       },
     },
+    toggle: {
+      name: 'toggle',
+      label: 'toggle',
+      type: 'toggle',
+      value: false,
+      // controller : 'console.log(fields); if(fields.test === "12") return {sx:{bgcolor: "red"} , helperText: "salam"}',
+      rules: {
+        required: 'toggle is required',
+      },
+    },
   };
 
   return (
