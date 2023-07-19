@@ -2,8 +2,6 @@ import axios, { AxiosResponse } from 'axios';
 import './App.css';
 import { ConfigProvider, FormBuilder } from '@mui-builder/form';
 
-// import MyForm from './Test/Test';
-
 const createAxiosInstance = (baseUrl?: string): any => {
   if (!baseUrl) throw new Error('base url is required for running program!');
   const instance = axios.create({
@@ -146,12 +144,12 @@ function App() {
         // required: 'attachment is required',
       },
     },
+    // this datepicker get all of react-multi-datepicker props
     datepicker: {
       name: 'datepicker',
       label: 'datepicker',
       type: 'datepicker',
       calendarPosition: 'bottom-right',
-      value: new Date(),
       format: 'YYYY/MM/DD',
       locale: 'fa',
       // controller : 'console.log(fields); if(fields.test === "12") return {sx:{bgcolor: "red"} , helperText: "salam"}',
