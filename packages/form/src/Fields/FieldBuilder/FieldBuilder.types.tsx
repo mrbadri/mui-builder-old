@@ -19,12 +19,14 @@ export enum FIELD_TYPE {
   TOGGLE = 'toggle',
 }
 
+export type TFieldRules =
+  | Omit<RegisterOptions<FieldValues, string>, 'disabled' | 'valueAsNumber' | 'valueAsDate' | 'setValueAs'>
+  | undefined;
+
 export interface TFieldProps {
   label: string;
   type: string;
   name: string;
-  rules:
-    | Omit<RegisterOptions<FieldValues, string>, 'disabled' | 'valueAsNumber' | 'valueAsDate' | 'setValueAs'>
-    | undefined;
+  rules: TFieldRules;
   controller?: string;
 }
