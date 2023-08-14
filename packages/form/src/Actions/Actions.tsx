@@ -1,11 +1,12 @@
-import React, { useMemo } from 'react';
+import React, { FC } from 'react';
 import { TActionsProps } from './Actions.types';
 
-const Actions = ({  list }: TActionsProps) => {
+const Actions:FC<TActionsProps> = ({  list }) => {
+  console.log("hi this is a tet")
   return (
     <>
-      {Object.keys(list).map((key: string): any => {
-        const fieldProps: any = list[key];
+      {Object.keys(list).map((_key: string): any => {
+        // const actionProps: any = list[key];
         return <>Actions</>;
       })}
     </>

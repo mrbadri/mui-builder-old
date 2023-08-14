@@ -7,4 +7,9 @@ export { default as Sections } from './Sections/Sections';
 export { default as Elements } from './Elements/Elements';
 export { default as ElementBuilder } from './Elements/ElementBuilder/ElementBuilder';
 
+export { default as  Actions } from './Actions/Actions';
+export { default as  ActionBuilder } from './Actions/ActionsBuilder/ActionsBuilder';
+
 export { default as ConfigProvider } from './config/ConfigProvider';
+
+

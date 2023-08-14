@@ -21,7 +21,7 @@
   "homepage": "https://github.com/mrbadri/mui-builder/packages/form#readme",
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "files": [
     "dist",
     "LICENSE",

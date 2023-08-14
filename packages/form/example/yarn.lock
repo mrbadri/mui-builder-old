@@ -1667,10 +1667,10 @@
   resolved "https://registry.yarnpkg.com/@leichtgewicht/ip-codec/-/ip-codec-2.0.4.tgz#b2ac626d6cb9c8718ab459166d4bb405b8ffa78b"
   integrity sha512-Hcv+nVC0kZnQ3tD9GVu5xSMR4VVYOteQIr/hwFPVEvPdlXqgGEuRjiheChHgdM+JyqdgNcmzZOX/tnl0JOiI7A==
 
-"@mui-builder/form@^0.0.5":
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/@mui-builder/form/-/form-0.0.5.tgz#c50efd5785d5ced8c65c28f992f0b8a9400632eb"
-  integrity sha512-HzHVl7nBlJzpEZHTSSsJKADpRGpRkptp7xh5Da1PIzL/ez/+05fA0mPQDTYDYhDlhllljhJRUTP8MbOLsL16nA==
+"@mui-builder/form@^0.0.6":
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/@mui-builder/form/-/form-0.0.6.tgz#c2023f38e5006d021ccc1409dbcf43782678d16d"
+  integrity sha512-ixdu1K+N8knb2zDx3mLgtSJ8scwfSCgUraPE1jZsN+jtVkY3FmV2Rv3sF/fsOTTT4kXYgxnjjLowditpwUu4sg==
   dependencies:
     "@emotion/react" "^11.11.0"
     "@emotion/styled" "^11.11.0"
