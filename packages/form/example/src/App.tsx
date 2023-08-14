@@ -1,28 +1,8 @@
-import axios, { AxiosResponse } from 'axios';
 import './App.css';
-import { ConfigProvider, FormBuilder, Actions } from '@mui-builder/form';
+
+import service from './services/services';
 import { fieldsSampleOne } from './data/fields';
-
-const createAxiosInstance = (baseUrl?: string): any => {
-  if (!baseUrl) throw new Error('base url is required for running program!');
-  const instance = axios.create({
-    baseURL: baseUrl,
-  });
-
-  instance.interceptors.response.use(
-    (response: AxiosResponse) => {
-      return response;
-    },
-    (error: any) => {
-      if (error.response?.status === 401) {
-        console.log('401');
-      }
-      return Promise.reject(error);
-    },
-  );
-
-  return instance;
-};
+import { ConfigProvider, FormBuilder, Actions } from '@mui-builder/form';
 
 function App() {
   // TODO:
@@ -34,7 +14,7 @@ function App() {
 
   return (
     <>
-      <ConfigProvider api={createAxiosInstance('https://jsonplaceholder.typicode.com')}>
+      <ConfigProvider api={service}>
         <FormBuilder fields={fieldsSampleOne} onSubmit={(res: any) => console.log(res)} />
 
         <Actions list={{ test: { test: 'test', test2: 'test2' }, test2: { test: 'test', test2: 'test2' } }} />
@@ -45,7 +25,8 @@ function App() {
 
 export default App;
 
-/* <ElementBuilder
+/* 
+<ElementBuilder
         component='SectionBuilder'
         element={{
           component: 'SectionBuilder',
@@ -62,4 +43,5 @@ export default App;
       </ElementBuilder>
 
       <ElementBuilder component='FormBuilder' fields={fieldTest} onSubmit={(res: any) => console.log(res)} />
-      <MyForm /> */
+      <MyForm /> 
+*/
