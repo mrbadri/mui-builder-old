@@ -1,8 +1,10 @@
 import React from 'react';
 import FormBuilder from './FormBuilder/FormBuilder';
+import { TFormBuilderProps } from './FormBuilder/FormBuilder.types';
+import { TFormProps } from './Forms.types';
 
-const Forms = (props: any) => {
-  return props.list.map((formProps: any, index: number) => <FormBuilder key={index} {...formProps} />);
+const Forms = (props: TFormProps) => {
+  return props.list.map((formProps: TFormBuilderProps, index) => <FormBuilder key={index} {...formProps} />);
 };
 
 export default Forms;

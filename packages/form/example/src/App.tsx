@@ -2,6 +2,7 @@ import './App.css';
 
 import service from './services/services';
 import { fieldsSampleOne } from './data/fields';
+import { actionsSampleOne } from './data/actions';
 import { ConfigProvider, FormBuilder, Actions } from '@mui-builder/form';
 
 function App() {
@@ -15,9 +16,8 @@ function App() {
   return (
     <>
       <ConfigProvider api={service}>
-        <FormBuilder fields={fieldsSampleOne} onSubmit={(res: any) => console.log(res)} />
-
-        <Actions list={{ test: { test: 'test', test2: 'test2' }, test2: { test: 'test', test2: 'test2' } }} />
+        <FormBuilder fields={fieldsSampleOne}  onSubmit={(res: any) => console.log(res)} />
+        <Actions list={actionsSampleOne} />
       </ConfigProvider>
     </>
   );
