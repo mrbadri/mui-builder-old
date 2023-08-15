@@ -8,7 +8,7 @@ import { ConfigProvider, FormBuilder, Actions } from '@mui-builder/form';
 function App() {
   // TODO:
   // api
-  // react query => version ?
+  // // react query => version 
   // controller => api call handle
   // result api => field input
   // zushtand => provider (optional)
@@ -16,8 +16,8 @@ function App() {
   return (
     <>
       <ConfigProvider api={service}>
-        <FormBuilder fields={fieldsSampleOne}  onSubmit={(res: any) => console.log(res)} />
-        <Actions list={actionsSampleOne} />
+        <FormBuilder fields={fieldsSampleOne} actions={actionsSampleOne} onSubmit={(res: any) => console.log(res)} />
+        {/* <Actions list={actionsSampleOne} /> */}
       </ConfigProvider>
     </>
   );
