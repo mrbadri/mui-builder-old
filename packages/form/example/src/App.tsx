@@ -3,7 +3,7 @@ import './App.css';
 import service from './services/services';
 import { fieldsSampleOne } from './data/fields';
 import { actionsSampleOne } from './data/actions';
-import { ConfigProvider, FormBuilder } from '@mui-builder/form';
+import { ConfigProvider, FormBuilder, useForm } from '@mui-builder/form';
 
 function App() {
   // TODO:
@@ -16,7 +16,7 @@ function App() {
   return (
     <>
       <ConfigProvider api={service}>
-      <FormBuilder fields={fieldsSampleOne} actions={actionsSampleOne} onSubmit={(res: any) => console.log({res})} />
+        <FormBuilder fields={fieldsSampleOne} actions={actionsSampleOne} onSubmit={(res: any) => console.log(res)} />
       </ConfigProvider>
     </>
   );

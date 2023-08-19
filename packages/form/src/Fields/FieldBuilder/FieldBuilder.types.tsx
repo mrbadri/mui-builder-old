@@ -24,9 +24,9 @@ export type TFieldRules =
   | undefined;
 
 export interface TFieldProps {
-  label: string;
+  label?: string;
   type: string;
   name: string;
-  rules: TFieldRules;
+  rules?: TFieldRules;
   controller?: string;
 }

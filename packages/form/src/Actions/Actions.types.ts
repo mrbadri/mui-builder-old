@@ -1,3 +1,4 @@
+import { TFormId } from '../Forms/FormBuilder/FormBuilder.types';
 import { ACTION_TYPE, TActionBuilderProps } from './ActionsBuilder/ActionsBuilder.types';
 
 export type TListActionProps = {
@@ -5,7 +6,6 @@ export type TListActionProps = {
 };
 
 export interface TActionsProps {
-  // TODO: #type base on TActionBuilderProps list
   list: TListActionProps;
-  // list: { [key in ACTION_TYPE]: TActionBuilderProps };
+  formId: TFormId;
 }

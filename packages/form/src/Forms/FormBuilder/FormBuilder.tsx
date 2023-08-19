@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useId } from 'react';
 
 import { useForm } from 'react-hook-form';
 
@@ -7,9 +7,10 @@ import { TFormBuilderProps } from './FormBuilder.types';
 import { useConfig } from '../../hooks/config/useConfig';
 import Actions from '../../Actions/Actions';
 
-const FormBuilder: React.FC<TFormBuilderProps> = ({ fields, actions }) => {
-  const form = useForm();
+const FormBuilder: React.FC<TFormBuilderProps> = ({ fields, actions, id = useId(), form = useForm() }) => {
   const config: any = useConfig((state) => state);
+
+  console.log({ id });
 
   useEffect(() => {
     config?.api.get('todos/1').then((res: any) => {
@@ -17,13 +18,16 @@ const FormBuilder: React.FC<TFormBuilderProps> = ({ fields, actions }) => {
     });
   }, []);
 
+  const onSubmit = (data: any) => {
+    form.reset();
+    console.log({ data })
+  }
 
-  console.log(form.formState.errors , form.getValues())
 
   return (
-    <form onSubmit={form.handleSubmit(console.log)}>
+    <form onSubmit={form.handleSubmit(onSubmit)}>
       <Fields list={fields} form={form} />
-      <Actions list={actions}/>
+      <Actions list={actions} formId={id} />
     </form>
   );
 };

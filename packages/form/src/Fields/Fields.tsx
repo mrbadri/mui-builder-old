@@ -18,6 +18,7 @@ const Fields = ({ form, list }: TFieldsProps) => {
       {Object.keys(list).map((key: string): any => {
         const fieldProps: TFieldProps = list[key];
         const controller = fieldProps?.controller && controllerFunction(fieldProps?.controller, getValues());
+      
         if (!(!!controller && !!controller?.hide))
           return (
             <Controller
@@ -28,8 +29,9 @@ const Fields = ({ form, list }: TFieldsProps) => {
               render={({ field }: any): any => {
                 return (
                   <FieldBuilder
-                    {...field}
                     {...fieldProps}
+                    {...field}
+                    name={fieldProps?.name}
                     form={form}
                     value={field?.value || ''}
                     label={fieldProps?.label}
