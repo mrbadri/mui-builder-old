@@ -3,7 +3,7 @@ import './App.css';
 import service from './services/services';
 import { fieldsSampleOne } from './data/fields';
 import { actionsSampleOne } from './data/actions';
-import { ConfigProvider, FormBuilder } from '@mui-builder/form';
+import { ConfigProvider, FormBuilder, useForm } from '@mui-builder/form';
 import { useEffect } from 'react';
 
 function App() {
@@ -14,16 +14,19 @@ function App() {
   // result api => field input
   // zushtand => provider (optional)
 
-  useEffect(() => {
-    service.get('todos/2').then((res: any) => {
-      console.log('🚀 ~ file: FormBuilder.tsx:23 ~ useEffect ~ res:', res);
-    });
-  }, []);
+  // useEffect(() => {
+  //   service.get('todos/2').then((res: any) => {
+  //     console.log('🚀 ~ file: FormBuilder.tsx:23 ~ useEffect ~ res:', res);
+  //   });
+  // }, []);
+
+  const form = useForm();
+  console.log("jnksn" , form.formState.errors)
 
   return (
     <>
-      <ConfigProvider api={service}>
-        <FormBuilder fields={fieldsSampleOne} actions={actionsSampleOne} id="form id test" />
+      <ConfigProvider >
+        <FormBuilder fields={fieldsSampleOne} form={form} actions={actionsSampleOne} id="form id test" />
       </ConfigProvider>
     </>
   );

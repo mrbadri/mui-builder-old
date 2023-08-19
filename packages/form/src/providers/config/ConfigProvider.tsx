@@ -1,16 +1,20 @@
-import React, { useLayoutEffect } from 'react';
+import React, { FC, useLayoutEffect } from 'react';
 import { useConfig } from '../../hooks/config/useConfig';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { TConfigProviderProps } from './ConfigProvider.types';
 
-function ConfigProvider({ children, api }: any) {
+const ConfigProvider: FC<TConfigProviderProps> = ({ children, api }) => {
   const { setApi } = useConfig();
 
   useLayoutEffect(() => {
-    setApi(api);
+    if (api)
+      setApi(api);
   }, [api]);
 
-  console.log({ api })
+  const queryClient = new QueryClient()
 
-  return <>{children}</>;
+  return <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+
 }
 
 export default ConfigProvider;

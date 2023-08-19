@@ -1,4 +1,6 @@
+import { AxiosStatic } from 'axios';
+
 export interface TConfigState {
-  api: any;
-  setApi: (api: any) => void;
+  api: AxiosStatic;
+  setApi: (api: AxiosStatic) => void;
 }

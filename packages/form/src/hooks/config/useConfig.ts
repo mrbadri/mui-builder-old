@@ -1,8 +1,8 @@
 import { create } from 'zustand';
-// import axios from 'axios';
+import axios from 'axios';
 import { TConfigState } from './useConfig.types';
 
 export const useConfig = create<TConfigState>((set) => ({
-  api: null,
+  api: axios,
   setApi: (api: any) => set(() => ({ api })),
 }));

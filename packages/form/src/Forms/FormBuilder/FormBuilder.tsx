@@ -7,25 +7,30 @@ import { TFormBuilderProps } from './FormBuilder.types';
 import { useConfig } from '../../hooks/config/useConfig';
 import Actions from '../../Actions/Actions';
 import useFormController from '../../hooks/formController/formController';
+import { useMutation } from '@tanstack/react-query';
 
 const FormBuilder = ({ fields, actions, id = useId(), form = useForm() }: TFormBuilderProps) => {
   const { api } = useConfig();
   const { setForm } = useFormController();
 
   useEffect(() => {
-    api?.get('todos/1')?.then((res: any) => {
-      console.log('🚀 ~ file: FormBuilder.tsx:23 ~ useEffect ~ res:', res);
-    });
-  }, [api]);
-
-  useEffect(() => {
     setForm(id, form)
   }, [id, form]);
 
+  const { mutate } = useMutation({
+    mutationFn: () => api({ url: 'https://jsonplaceholder.typicode.com/todos/1', method: 'get' }),
+    onSuccess: (res) => {
+      console.log("--pppppppp:", res);
+    },
+    onError: (res) => {
+      console.log("eroooooor:", res)
+    }
+  });
 
-  const onSubmit = (data: any) => {
+
+  const onSubmit = (_data: any) => {
     form.reset();
-    console.log({ data })
+    mutate();
   }
 
   return (
