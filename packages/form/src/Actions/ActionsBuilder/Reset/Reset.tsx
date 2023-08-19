@@ -1,10 +1,13 @@
 import { Button } from "@mui/material";
 import React, { FC } from "react";
 import { TActionBuilderProps } from "../ActionsBuilder.types";
+import useFormController from "../../../hooks/formController/formController";
 
 const ResetAction: FC<TActionBuilderProps> = ({ title, formId }) => {
-    console.log('form is reset action:', formId)
-    return <Button type="reset">{title}</Button>
+    const { forms } = useFormController();
+    const form = forms[formId];
+
+    return <Button type="reset" onClick={() => { form.reset()}}>{title}</Button>
 }
 
-export default ResetAction
+export default ResetAction;

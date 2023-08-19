@@ -6,11 +6,12 @@ import Fields from '../../Fields/Fields';
 import { TFormBuilderProps } from './FormBuilder.types';
 import { useConfig } from '../../hooks/config/useConfig';
 import Actions from '../../Actions/Actions';
+import useFormController from '../../hooks/formController/formController';
 
 const FormBuilder: React.FC<TFormBuilderProps> = ({ fields, actions, id = useId(), form = useForm() }) => {
-  const config: any = useConfig((state) => state);
+  const config: any = useConfig();
+  const { setForm } = useFormController();
 
-  console.log({ id });
 
   useEffect(() => {
     config?.api.get('todos/1').then((res: any) => {
@@ -18,11 +19,15 @@ const FormBuilder: React.FC<TFormBuilderProps> = ({ fields, actions, id = useId(
     });
   }, []);
 
+  useEffect(() => {
+    setForm(id, form)
+  }, [form, id]);
+
+
   const onSubmit = (data: any) => {
     form.reset();
     console.log({ data })
   }
-
 
   return (
     <form onSubmit={form.handleSubmit(onSubmit)}>
