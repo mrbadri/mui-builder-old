@@ -10,6 +10,6 @@ export { default as ElementBuilder } from './Elements/ElementBuilder/ElementBuil
 export { default as  Actions } from './Actions/Actions';
 export { default as  ActionBuilder } from './Actions/ActionsBuilder/ActionsBuilder';
 
-export { default as ConfigProvider } from './config/ConfigProvider';
+export { default as ConfigProvider } from './providers/config/ConfigProvider';
 
 

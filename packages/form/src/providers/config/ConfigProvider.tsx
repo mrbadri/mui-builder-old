@@ -1,5 +1,5 @@
 import React, { useLayoutEffect } from 'react';
-import { useConfig } from './useConfig';
+import { useConfig } from '../../hooks/config/useConfig';
 
 function ConfigProvider({ children, api }: any) {
   const config: any = useConfig();

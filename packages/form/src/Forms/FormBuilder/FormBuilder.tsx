@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 
 import Fields from '../../Fields/Fields';
 import { TFormBuilderProps } from './FormBuilder.types';
-import { useConfig } from '../../config/useConfig';
+import { useConfig } from '../../hooks/config/useConfig';
 import Actions from '../../Actions/Actions';
 
 const FormBuilder: React.FC<TFormBuilderProps> = ({ fields, onSubmit, actions }) => {
