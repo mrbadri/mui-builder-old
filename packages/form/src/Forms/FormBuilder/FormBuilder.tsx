@@ -12,7 +12,6 @@ const FormBuilder: React.FC<TFormBuilderProps> = ({ fields, actions, id = useId(
   const config: any = useConfig();
   const { setForm } = useFormController();
 
-
   useEffect(() => {
     config?.api.get('todos/1').then((res: any) => {
       console.log('🚀 ~ file: FormBuilder.tsx:23 ~ useEffect ~ res:', res);

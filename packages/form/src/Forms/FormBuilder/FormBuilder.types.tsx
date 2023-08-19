@@ -1,10 +1,11 @@
 // import { TListActionProps } from '../../Actions/Actions.types';
-import { FieldValues, UseFormReturn } from 'react-hook-form';
 import { TListFieldProps } from '../../Fields/Fields.types';
+import { TForm } from '../../hooks/formController/formController.types';
+
 
 export interface TFormBuilderProps {
   id?: string;
-  form?: UseFormReturn<FieldValues, any, undefined>
+  form?: TForm,
   fields: TListFieldProps;
   actions: any;
   onSubmit: (data: any) => void;

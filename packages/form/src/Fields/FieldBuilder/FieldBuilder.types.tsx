@@ -1,8 +1,9 @@
-import { FieldValues, RegisterOptions, UseFormReturn } from 'react-hook-form';
+import { FieldValues, RegisterOptions} from 'react-hook-form';
+import { TForm } from '../../hooks/formController/formController.types';
 
 export interface TFieldBuilderProps {
   type: FIELD_TYPE;
-  form: UseFormReturn<FieldValues, any, undefined>;
+  form: TForm;
   // TODO: change type
   name: string;
 }

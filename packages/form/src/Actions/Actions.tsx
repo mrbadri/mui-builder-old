@@ -6,10 +6,10 @@ import { ACTION_TYPE, TActionBuilderProps } from './ActionsBuilder/ActionsBuilde
 const Actions: FC<TActionsProps> = ({ list, formId }) => {
   return (
     <>
-      {Object.keys(list).map((key): JSX.Element => {
+      {Object.keys(list).map((key, index): JSX.Element => {
         const actionProps: Omit<TActionBuilderProps, 'formId'> = list[key as ACTION_TYPE];
 
-        return <ActionBuilder formId={formId} {...actionProps} />;
+        return <ActionBuilder key={index} formId={formId} {...actionProps} />;
       })}
     </>
   );

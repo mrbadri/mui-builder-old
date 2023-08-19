@@ -1,5 +1,6 @@
-import { UseFormReturn, FieldValues } from 'react-hook-form/dist/types';
 import { TFieldProps } from './FieldBuilder/FieldBuilder.types';
+import { TForm } from '../hooks/formController/formController.types';
+
 // #TODO: change types
 
 export interface TListFieldProps {
@@ -8,5 +9,5 @@ export interface TListFieldProps {
 
 export interface TFieldsProps {
   list: TListFieldProps;
-  form: UseFormReturn<FieldValues, any, undefined>;
+  form: TForm;
 }
