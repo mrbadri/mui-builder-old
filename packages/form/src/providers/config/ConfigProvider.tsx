@@ -2,11 +2,13 @@ import React, { useLayoutEffect } from 'react';
 import { useConfig } from '../../hooks/config/useConfig';
 
 function ConfigProvider({ children, api }: any) {
-  const config: any = useConfig();
+  const { setApi } = useConfig();
 
   useLayoutEffect(() => {
-    config.setApi(api);
+    setApi(api);
   }, [api]);
+
+  console.log({ api })
 
   return <>{children}</>;
 }

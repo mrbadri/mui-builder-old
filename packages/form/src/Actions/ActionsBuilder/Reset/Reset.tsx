@@ -7,7 +7,9 @@ const ResetAction: FC<TActionBuilderProps> = ({ title, formId }) => {
     const { forms } = useFormController();
     const form = forms[formId];
 
-    return <Button type="reset" onClick={() => { form.reset()}}>{title}</Button>
+    console.log({ formId })
+
+    return <Button type="reset" onClick={() => { form.reset() }}>{title}</Button>
 }
 
 export default ResetAction;

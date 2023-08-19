@@ -8,7 +8,7 @@ export interface TFormBuilderProps {
   form?: TForm,
   fields: TListFieldProps;
   actions: any;
-  onSubmit: (data: any) => void;
+  onSubmit?: (data: any) => void;
 }
 
 export type TFormId = string;
