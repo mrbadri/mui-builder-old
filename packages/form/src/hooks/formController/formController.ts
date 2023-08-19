@@ -1,9 +1,9 @@
 import { create } from 'zustand';
-import axios from 'axios';
+import { TFormControllerState } from './formController.types';
 
-const useFormController = create((set) => ({
-  fors: axios,
-  setApi: (api: any) => set(() => ({ api })),
+const useFormController = create<TFormControllerState>((set) => ({
+  forms: {},
+  setForm: (formId: string, form: any) => set((state) => ({ forms: { ...state.forms, [formId]: form } })),
 }));
 
 export default useFormController;
