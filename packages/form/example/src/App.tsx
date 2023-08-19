@@ -16,7 +16,7 @@ function App() {
   return (
     <>
       <ConfigProvider api={service}>
-      <FormBuilder fields={fieldsSampleOne} actions={actionsSampleOne} onSubmit={(res: any) => console.log(res)} />
+      <FormBuilder fields={fieldsSampleOne} actions={actionsSampleOne} onSubmit={(res: any) => console.log({res})} />
       </ConfigProvider>
     </>
   );

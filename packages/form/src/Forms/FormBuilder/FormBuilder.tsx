@@ -7,7 +7,7 @@ import { TFormBuilderProps } from './FormBuilder.types';
 import { useConfig } from '../../hooks/config/useConfig';
 import Actions from '../../Actions/Actions';
 
-const FormBuilder: React.FC<TFormBuilderProps> = ({ fields, onSubmit, actions }) => {
+const FormBuilder: React.FC<TFormBuilderProps> = ({ fields, actions }) => {
   const form = useForm();
   const config: any = useConfig((state) => state);
 
@@ -17,8 +17,11 @@ const FormBuilder: React.FC<TFormBuilderProps> = ({ fields, onSubmit, actions })
     });
   }, []);
 
+
+  console.log(form.formState.errors , form.getValues())
+
   return (
-    <form onSubmit={form.handleSubmit(onSubmit)}>
+    <form onSubmit={form.handleSubmit(console.log)}>
       <Fields list={fields} form={form} />
       <Actions list={actions}/>
     </form>

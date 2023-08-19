@@ -3,7 +3,7 @@ import React, { FC } from "react";
 import { TActionBuilderProps } from "../ActionsBuilder.types";
 
 const SubmitAction: FC<TActionBuilderProps> = ({ title }) => {
-    return <Button>{title}</Button>
+    return <Button type="submit">{title}</Button>
 }
 
 export default SubmitAction
