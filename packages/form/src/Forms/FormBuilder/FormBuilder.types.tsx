@@ -3,7 +3,7 @@ import { FieldValues, UseFormReturn } from 'react-hook-form';
 import { TListFieldProps } from '../../Fields/Fields.types';
 
 export interface TFormBuilderProps {
-  id: string;
+  id?: string;
   form?: UseFormReturn<FieldValues, any, undefined>
   fields: TListFieldProps;
   actions: any;
