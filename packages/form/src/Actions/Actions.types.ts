@@ -1,9 +1,8 @@
-import { TActionBuilderProps } from './ActionsBuilder/ActionsBuilder.types';
+import { ACTION_TYPE, TActionBuilderProps } from './ActionsBuilder/ActionsBuilder.types';
 
-export interface TListActionProps {
-  // TODO: handle key type in ACTION_TYPE
-  [key: string]: TActionBuilderProps;
-}
+export type TListActionProps = {
+  [Key in ACTION_TYPE]: TActionBuilderProps;
+};
 
 export interface TActionsProps {
   // TODO: #type base on TActionBuilderProps list

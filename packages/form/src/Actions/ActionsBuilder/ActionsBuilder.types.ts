@@ -11,5 +11,6 @@ export enum ACTION_TYPE {
 
 export interface TActionBuilderProps {
   api?: TActionBuilderApi;
-  type?: ACTION_TYPE;
+  type: ACTION_TYPE;
+  title: string
 }

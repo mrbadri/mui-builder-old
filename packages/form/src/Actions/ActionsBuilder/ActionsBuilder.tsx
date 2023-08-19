@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { ACTION_TYPE, TActionBuilderProps } from './ActionsBuilder.types';
-import { Button } from '@mui/material';
+import SubmitAction from './Submit/Submit';
 
 // TODO:
 // - API
@@ -11,8 +11,15 @@ import { Button } from '@mui/material';
 // - title
 // - variant => outlined, contained, text
 
-const ActionBuilder: FC<TActionBuilderProps> = ({ type = ACTION_TYPE.SUBMIT }) => {
-  return <Button>test222 , {type}</Button>;
+
+const Controller: { [key in ACTION_TYPE]: React.FC<TActionBuilderProps> } = {
+  [ACTION_TYPE.SUBMIT]: SubmitAction,
+};
+
+const ActionBuilder: FC<TActionBuilderProps> = (props) => {
+  const Action = Controller?.[props?.type || ACTION_TYPE.SUBMIT];
+
+  return <Action {...props} />;
 };
 
 export default ActionBuilder;
