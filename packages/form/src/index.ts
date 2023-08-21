@@ -15,3 +15,8 @@ export { default as ConfigProvider } from './providers/config/ConfigProvider';
 
 // Hooks
 export { default as useForm } from './hooks/form/form';
+
+// ----------- ----------- -----------
+// Type
+export { ACTION_TYPE } from './Actions/ActionsBuilder/ActionsBuilder.types';
+export { TListActionProps } from './Actions/Actions.types';

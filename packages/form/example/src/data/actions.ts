@@ -1,5 +1,11 @@
-export const actionsSampleOne = {
-  submit: { type: 'submit', title: 'Submit', api: { method: 'post', body: { test: 1 } } },
-  reset: { type: 'reset', title: 'reset', api: { method: 'post', body: { test: 1 } } },
-  // test2: { test: 'test', test2: 'test2' },
+import { TListActionProps } from '@mui-builder/form';
+import { ACTION_TYPE } from '@mui-builder/form';
+
+export const actionsSampleOne: TListActionProps = {
+  submit: {
+    type: ACTION_TYPE.SUBMIT,
+    title: 'Submit',
+    api: { url: 'https://jsonplaceholder.typicode.com/todos/2', method: 'post', data: { test: 'klsjlk' } },
+  },
+  reset: { type: ACTION_TYPE.RESET, title: 'reset', api: { method: 'post' } },
 };

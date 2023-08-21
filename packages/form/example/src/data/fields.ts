@@ -122,8 +122,8 @@ export const fieldsSampleOne = {
   // radio,
   // checkbox,
   // checkbox2,
-  // select,
-  // mutliSelect,
+  select,
+  mutliSelect,
   // attachment,
   // // this datepicker get all of react-multi-datepicker props
   // datepicker,
