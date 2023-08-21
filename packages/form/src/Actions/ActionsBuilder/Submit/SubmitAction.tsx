@@ -7,4 +7,4 @@ const SubmitAction: FC<TActionBuilderProps> = ({ title }) => {
     return <LoadingButton type="submit">{title}</LoadingButton>
 }
 
-export default SubmitAction
+export default SubmitAction;

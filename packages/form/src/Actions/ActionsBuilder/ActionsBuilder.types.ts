@@ -1,5 +1,6 @@
-import { AxiosRequestConfig } from "axios";
-import { TFormId } from "../../Forms/FormBuilder/FormBuilder.types";
+import { AxiosRequestConfig } from 'axios';
+import { TFormId } from '../../Forms/FormBuilder/FormBuilder.types';
+import { TForm } from '../../hooks/formController/formController.types';
 
 // export interface TActionBuilderApi {
 //   method: string;
@@ -10,7 +11,7 @@ import { TFormId } from "../../Forms/FormBuilder/FormBuilder.types";
 
 export enum ACTION_TYPE {
   SUBMIT = 'submit',
-  RESET = 'reset'
+  RESET = 'reset',
 }
 
 export interface TActionBuilderProps {
@@ -18,4 +19,6 @@ export interface TActionBuilderProps {
   type: ACTION_TYPE;
   title: string;
   formId: TFormId;
+  onSuccess?: (responseApi: unknown, form: TForm) => void;
+  onError?: (responseApi: unknown, form: TForm) => void;
 }

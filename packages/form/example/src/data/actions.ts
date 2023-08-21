@@ -6,6 +6,9 @@ export const actionsSampleOne: TListActionProps = {
     type: ACTION_TYPE.SUBMIT,
     title: 'Submit',
     api: { url: 'https://jsonplaceholder.typicode.com/todos/2', method: 'post', data: { test: 'klsjlk' } },
+    onError: (error, form) => {
+      console.log('call back', error, form);
+    },
   },
   reset: { type: ACTION_TYPE.RESET, title: 'reset', api: { method: 'post' } },
 };

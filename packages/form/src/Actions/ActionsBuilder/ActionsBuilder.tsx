@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { ACTION_TYPE, TActionBuilderProps } from './ActionsBuilder.types';
-import SubmitAction from './Submit/Submit';
-import ResetAction from './Reset/Reset';
+import SubmitAction from './Submit/SubmitAction';
+import ResetAction from './Reset/ResetAction';
 
 // TODO:
 // - API

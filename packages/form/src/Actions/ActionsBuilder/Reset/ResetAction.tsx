@@ -9,8 +9,6 @@ const ResetAction: FC<TActionBuilderProps> = ({ title, formId }) => {
     const { forms } = useFormController();
     const form = forms[formId];
 
-    console.log({ formId })
-
     return <LoadingButton type="reset" onClick={() => { form.reset() }}>{title}</LoadingButton>
 }
 

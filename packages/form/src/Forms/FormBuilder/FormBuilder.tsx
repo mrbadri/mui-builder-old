@@ -19,19 +19,25 @@ const FormBuilder = ({ fields, actions, id = useId(), form = useForm() }: TFormB
     setForm(id, form)
   }, [id, form]);
 
+  const actionSubmit = actions[ACTION_TYPE.SUBMIT];
+  const configApi: AxiosRequestConfig = actionSubmit.api || {};
+  const onSuccess = actionSubmit?.onSuccess;
+  const onError = actionSubmit?.onError;
+
 
   const { refetch } = useQuery({
     queryFn: () => {
-      const configApi: AxiosRequestConfig = actions[ACTION_TYPE.SUBMIT].api || {};
       api({ ...configApi, data: { ...configApi.data, ...form.getValues() } });
     },
     queryKey: ['onSubmitForm', id],
     onSuccess: (res) => {
       console.log("Success", res);
+      if (onSuccess) onSuccess(res, form)
       form.reset();
     },
     onError: (res) => {
       console.log("Error:", res);
+      if (onError) onError(res, form)
     },
     enabled: false
   });
