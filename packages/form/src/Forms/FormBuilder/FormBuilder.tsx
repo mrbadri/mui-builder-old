@@ -9,6 +9,7 @@ import Actions from '../../Actions/Actions';
 import useFormController from '../../hooks/formController/formController';
 import { useQuery } from '@tanstack/react-query';
 import { ACTION_TYPE } from '../../Actions/ActionsBuilder/ActionsBuilder.types';
+import { AxiosRequestConfig } from 'axios';
 
 const FormBuilder = ({ fields, actions, id = useId(), form = useForm() }: TFormBuilderProps) => {
   const { api } = useConfig();
@@ -19,32 +20,24 @@ const FormBuilder = ({ fields, actions, id = useId(), form = useForm() }: TFormB
   }, [id, form]);
 
 
-  const { data, refetch } = useQuery({
-    queryFn: (res) => {
-      api(actions[ACTION_TYPE.SUBMIT].api || {});
-      console.log("tetsg", res);
-
+  const { refetch } = useQuery({
+    queryFn: () => {
+      const configApi: AxiosRequestConfig = actions[ACTION_TYPE.SUBMIT].api || {};
+      api({ ...configApi, data: { ...configApi.data, ...form.getValues() } });
     },
     queryKey: ['onSubmitForm', id],
     onSuccess: (res) => {
-      console.log("--pppppppp:", res);
+      console.log("Success", res);
+      form.reset();
     },
     onError: (res) => {
-      console.log("eroooooor:", res);
+      console.log("Error:", res);
     },
     enabled: false
   });
 
-  console.log("--", { data })
-
-
-  const onSubmit = (_data: any) => {
-    form.reset();
-    refetch();
-  }
-
   return (
-    <form onSubmit={form.handleSubmit(onSubmit)}>
+    <form onSubmit={form.handleSubmit(refetch)}>
       <Fields list={fields} form={form} />
       <Actions list={actions} formId={id} />
     </form>
