@@ -19,7 +19,7 @@ function App() {
   // }, []);
 
   const form = useForm();
-  console.log("jnksn", form.formState.errors)
+  console.log("jnksn", form.formState.errors);
 
   return (
     <>

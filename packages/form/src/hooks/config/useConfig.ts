@@ -6,3 +6,4 @@ export const useConfig = create<TConfigState>((set) => ({
   api: axios,
   setApi: (api: any) => set(() => ({ api })),
 }));
+

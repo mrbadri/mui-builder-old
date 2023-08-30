@@ -9,6 +9,9 @@ export const actionsSampleOne: TListActionProps = {
     onError: (error, form) => {
       console.log('call back', error, form);
     },
+    sx:{
+      bgcolor: "red !important"
+    }
   },
   reset: { type: ACTION_TYPE.RESET, title: 'reset', api: { method: 'post' } },
 };

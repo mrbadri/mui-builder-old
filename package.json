@@ -1,5 +1,9 @@
 {
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "dependencies": {
+    "@mui/lab": "^5.0.0-alpha.140",
+    "@tanstack/react-query": "^4.33.0"
+  }
 }
