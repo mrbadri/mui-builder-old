@@ -1,11 +1,15 @@
-import { FieldValues, RegisterOptions} from 'react-hook-form';
+import { FieldValues, RegisterOptions } from 'react-hook-form';
 import { TForm } from '../../hooks/formController/formController.types';
 
 export interface TFieldBuilderProps {
-  type: FIELD_TYPE;
+  type: FIELD_TYPE | 'config';
   form: TForm;
   // TODO: change type
   name: string;
+}
+
+export interface TConfig {
+  spacing: string | number
 }
 
 export enum FIELD_TYPE {

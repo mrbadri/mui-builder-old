@@ -2,6 +2,7 @@ const text = {
   name: 'text',
   label: 'text',
   type: 'text',
+  col: { xs: 6 },
   // controller : 'console.log(fields); if(fields.test === "12") return {sx:{bgcolor: "red"} , helperText: "salam"}',
   rules: {
     // minLength: {
@@ -129,3 +130,24 @@ export const fieldsSampleOne = {
   // datepicker,
   // toggle,
 };
+
+// const saman = {
+//   spacing: 2,
+//   col: 12,
+//   feilds: [
+//     {
+//       label: 'd[la[dp',
+//       col: 6,
+//       id: 'customfield_1025',
+
+//     },
+//     {
+//       label: 'd[la[dp',
+//       type: table,
+//       col: 6,
+//       id: 'customfield_1025',
+//       fields: {}
+
+//     }
+//   ]
+// }

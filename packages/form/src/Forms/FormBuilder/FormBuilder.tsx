@@ -10,6 +10,7 @@ import useFormController from '../../hooks/formController/formController';
 import { useQuery } from '@tanstack/react-query';
 import { ACTION_TYPE } from '../../Actions/ActionsBuilder/ActionsBuilder.types';
 import { AxiosRequestConfig } from 'axios';
+import Grid2 from '@mui/material/Unstable_Grid2/Grid2';
 
 const FormBuilder = ({ fields, actions, id = useId(), form = useForm() }: TFormBuilderProps) => {
   const { api } = useConfig();
@@ -44,8 +45,10 @@ const FormBuilder = ({ fields, actions, id = useId(), form = useForm() }: TFormB
 
   return (
     <form onSubmit={form.handleSubmit(refetch)}>
-      <Fields list={fields} form={form} />
-      <Actions list={actions} formId={id} />
+      <Grid2 container spacing={2}>
+        <Fields list={fields} form={form} />
+        <Actions list={actions} formId={id} />
+      </Grid2>
     </form>
   );
 };
