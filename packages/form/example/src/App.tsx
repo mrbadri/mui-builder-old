@@ -24,7 +24,7 @@ function App() {
   return (
     <>
       <ConfigProvider >
-        <FormBuilder fields={fieldsSampleOne} form={form} actions={actionsSampleOne} id="form id test" />
+        <FormBuilder fields={fieldsSampleOne} form={form} config={{ layout: { spacing: 5 } }} actions={actionsSampleOne} id="form id test" />
       </ConfigProvider>
     </>
   );
