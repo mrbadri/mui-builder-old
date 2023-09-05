@@ -34,13 +34,12 @@ const Fields = ({ form, list }: TFieldsProps) => {
                     <FieldBuilder
                       {...fieldProps}
                       {...field}
-                      name={fieldProps?.name}
                       form={form}
+                      name={fieldProps?.name}
                       value={field?.value || ''}
-                      label={fieldProps?.label}
                       onChange={field.onChange}
                       error={!!formState.errors[field.name]}
-                      helperText={formState.errors[field.name]?.message as string}
+                      label={formState.errors[field.name]?.message  || fieldProps?.label}
                       {...controller}
                     />
                   );

@@ -25,7 +25,12 @@ const BaseInput = styled((props: TextFieldProps) => (
     '&.Mui-disabled': {
       color: theme.palette.grey[400] + ' !important',
     },
+
+    '&.Mui-error': {
+      color: theme.palette.error.main + ' !important',
+    },
   },
+
 
   '& .MuiFilledInput-root': {
     border: 'solid 1px',
