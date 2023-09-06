@@ -8,7 +8,7 @@ import { TCol } from '../types/public';
 //   [key: string]: TFieldProps
 // }
 
-export type TListFieldProps = Record<string, (TFieldProps & { col?: TCol })>;
+export type TListFieldProps = Record<string, Omit<(TFieldProps & { col?: TCol }), 'id'>>;
 
 export interface TFieldsProps {
   list: TListFieldProps;

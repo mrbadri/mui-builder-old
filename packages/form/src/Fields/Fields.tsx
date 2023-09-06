@@ -10,33 +10,32 @@ import Grid2 from '@mui/material/Unstable_Grid2/Grid2';
 const Fields = ({ form, list }: TFieldsProps) => {
   const { control, formState, getValues, watch } = form;
 
+  //TODO: #type
   const listWatch: any = useMemo(() => getLIstWatch(list), [list]);
   watch(listWatch);
 
   return (
     <>
-      {Object.keys(list).map((key: string): any => {
-        const { col = {}, ...fieldProps } = list[key];
+      {Object.keys(list).map((id: string): any => {
+        const { col = {}, ...fieldProps } = list[id];
         const { xs = 12, sm, md, lg } = col;
 
         const controller = fieldProps?.controller && controllerFunction(fieldProps?.controller, getValues());
 
         if (!(!!controller && !!controller?.hide))
           return (
-            <Grid2 xs={xs} sm={sm} md={md} lg={lg}>
+            <Grid2 key={id} xs={xs} sm={sm} md={md} lg={lg}>
               <Controller
-                key={key}
                 control={control}
-                name={fieldProps.id}
+                name={id}
                 rules={fieldProps?.rules}
                 render={({ field }: any): any => {
                   return (
                     <FieldBuilder
                       {...fieldProps}
                       {...field}
-                      type={key}
+                      id={id}
                       form={form}
-                      name={fieldProps.id}
                       value={field?.value || ''}
                       onChange={field.onChange}
                       error={!!formState.errors[field.name]}

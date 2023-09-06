@@ -1,9 +1,8 @@
 const text = {
-  id: 'text',
   label: 'Email',
   type: 'text',
   col: { xs: 6 },
-  // controller : 'console.log(fields); if(fields.test === "12") return {sx:{bgcolor: "red"} , helperText: "salam"}',
+  controller : 'console.log(fields); if(fields.test12?.value === 1 && fields.multiSelect?.[0].value === 1) return {sx:{bgcolor: "green"} , helperText: "ali" }; else return {disabled: true}',
   rules: {
     // minLength: {
     //   value: 10,
@@ -13,7 +12,6 @@ const text = {
   },
 };
 const textarea = {
-  id: 'textarea',
   label: 'textarea',
   type: 'textarea',
   rows: '2',
@@ -22,7 +20,6 @@ const textarea = {
   },
 };
 const radio = {
-  id: 'radio',
   label: 'radio',
   type: 'radio',
   rules: {
@@ -41,7 +38,6 @@ const radio = {
   ],
 };
 const checkbox = {
-  id: 'checkbox1',
   label: 'checkbox1',
   type: 'checkbox',
   rules: {
@@ -49,7 +45,6 @@ const checkbox = {
   },
 };
 const checkbox2 = {
-  id: 'checkbox2',
   label: 'checkbox2',
   type: 'checkbox',
   rules: {
@@ -57,7 +52,6 @@ const checkbox2 = {
   },
 };
 const select = {
-  id: 'select',
   label: 'select',
   type: 'select',
   rules: {
@@ -71,11 +65,10 @@ const select = {
   ],
 };
 const multiSelect = {
-  id: 'multi-select',
   label: 'multi Select',
   type: 'multiSelect',
   rules: {
-    required: 'multi Select is required',
+    // required: 'multi Select is required',
   },
   options: [
     { label: 'hi1', value: 1 },
@@ -85,7 +78,6 @@ const multiSelect = {
   ],
 };
 const attachment = {
-  id: 'attachment',
   label: 'attachment',
   type: 'attachment',
   multiple: true,
@@ -95,7 +87,6 @@ const attachment = {
   },
 };
 const datepicker = {
-  id: 'datepicker',
   label: 'datepicker',
   type: 'datepicker',
   calendarPosition: 'bottom-right',
@@ -107,7 +98,6 @@ const datepicker = {
   },
 };
 const toggle = {
-  id: 'toggle',
   label: 'toggle',
   type: 'toggle',
   value: false,
@@ -118,12 +108,12 @@ const toggle = {
 };
 
 export const fieldsSampleOne = {
-  text,
+  text12: text,
   // textarea,
   // radio,
   // checkbox,
   // checkbox2,
-  select,
+ test12: select,
   multiSelect,
   // attachment,
   // // this datepicker get all of react-multi-datepicker props
@@ -138,14 +128,12 @@ export const fieldsSampleOne = {
 //     {
 //       label: 'd[la[dp',
 //       col: 6,
-//       id: 'customfield_1025',
 
 //     },
 //     {
 //       label: 'd[la[dp',
 //       type: table,
 //       col: 6,
-//       id: 'customfield_1025',
 //       fields: {}
 
 //     }
