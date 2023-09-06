@@ -1,6 +1,6 @@
 const text = {
-  name: 'text',
-  label: 'text',
+  id: 'text',
+  label: 'Email',
   type: 'text',
   col: { xs: 6 },
   // controller : 'console.log(fields); if(fields.test === "12") return {sx:{bgcolor: "red"} , helperText: "salam"}',
@@ -13,7 +13,7 @@ const text = {
   },
 };
 const textarea = {
-  name: 'textarea',
+  id: 'textarea',
   label: 'textarea',
   type: 'textarea',
   rows: '2',
@@ -22,7 +22,7 @@ const textarea = {
   },
 };
 const radio = {
-  name: 'radio',
+  id: 'radio',
   label: 'radio',
   type: 'radio',
   rules: {
@@ -41,7 +41,7 @@ const radio = {
   ],
 };
 const checkbox = {
-  name: 'checkbox1',
+  id: 'checkbox1',
   label: 'checkbox1',
   type: 'checkbox',
   rules: {
@@ -49,7 +49,7 @@ const checkbox = {
   },
 };
 const checkbox2 = {
-  name: 'checkbox2',
+  id: 'checkbox2',
   label: 'checkbox2',
   type: 'checkbox',
   rules: {
@@ -57,7 +57,7 @@ const checkbox2 = {
   },
 };
 const select = {
-  name: 'select',
+  id: 'select',
   label: 'select',
   type: 'select',
   rules: {
@@ -70,12 +70,12 @@ const select = {
     { label: 'hi4', value: 4 },
   ],
 };
-const mutliSelect = {
-  name: 'multi-select',
-  label: 'select',
+const multiSelect = {
+  id: 'multi-select',
+  label: 'multi Select',
   type: 'multiSelect',
   rules: {
-    // required: 'is required',
+    required: 'multi Select is required',
   },
   options: [
     { label: 'hi1', value: 1 },
@@ -85,7 +85,7 @@ const mutliSelect = {
   ],
 };
 const attachment = {
-  name: 'attachment',
+  id: 'attachment',
   label: 'attachment',
   type: 'attachment',
   multiple: true,
@@ -95,7 +95,7 @@ const attachment = {
   },
 };
 const datepicker = {
-  name: 'datepicker',
+  id: 'datepicker',
   label: 'datepicker',
   type: 'datepicker',
   calendarPosition: 'bottom-right',
@@ -107,7 +107,7 @@ const datepicker = {
   },
 };
 const toggle = {
-  name: 'toggle',
+  id: 'toggle',
   label: 'toggle',
   type: 'toggle',
   value: false,
@@ -124,7 +124,7 @@ export const fieldsSampleOne = {
   // checkbox,
   // checkbox2,
   select,
-  mutliSelect,
+  multiSelect,
   // attachment,
   // // this datepicker get all of react-multi-datepicker props
   // datepicker,

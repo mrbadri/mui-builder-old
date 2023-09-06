@@ -13,7 +13,7 @@ const MultiSelect = (props: any) => {
       {...otherProps}
       multiple
       onChange={(_event, newInputValue) => {
-        setValue(props?.name, newInputValue);
+        setValue(props?.id, newInputValue);
       }}
     />
   );

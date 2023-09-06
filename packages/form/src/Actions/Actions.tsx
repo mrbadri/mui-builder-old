@@ -7,13 +7,13 @@ import Grid2 from '@mui/material/Unstable_Grid2/Grid2';
 const Actions: FC<TActionsProps> = ({ list, formId }) => {
   return (
     <>
-      {Object.keys(list).map((key, index): JSX.Element => {
+      {Object.keys(list).map((key): JSX.Element => {
         const { col = {}, ...actionProps } = list[key as ACTION_TYPE];
         const { xs = 12, sm, md, lg } = col;
 
         return (
-          <Grid2 xs={xs} sm={sm} md={md} lg={lg}>
-            <ActionBuilder key={index} formId={formId} {...actionProps} />
+          <Grid2 key={key} xs={xs} sm={sm} md={md} lg={lg}>
+            <ActionBuilder formId={formId} {...actionProps} />
           </Grid2>
         );
       })}

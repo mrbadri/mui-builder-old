@@ -12,7 +12,7 @@ const Select = (props: any) => {
       renderInput={(params) => <BaseInput helperText={helperText} error={error} label={label} {...params} />}
       options={otherProps.options}
       onChange={(_event, newInputValue) => {
-        setValue(props?.name, newInputValue);
+        setValue(props?.id, newInputValue);
       }}
       {...otherProps}
     />

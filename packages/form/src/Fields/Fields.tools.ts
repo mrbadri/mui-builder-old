@@ -20,7 +20,7 @@ export const getLIstWatch = (fields: any) => {
     const field: TFieldProps = fields[key];
 
     if (!!field?.controller) {
-      arr.push(getEffectiveFields(field?.controller, field.name));
+      arr.push(getEffectiveFields(field?.controller, field.id));
     }
   });
 

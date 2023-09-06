@@ -27,19 +27,20 @@ const Fields = ({ form, list }: TFieldsProps) => {
               <Controller
                 key={key}
                 control={control}
-                name={fieldProps?.name}
+                name={fieldProps.id}
                 rules={fieldProps?.rules}
                 render={({ field }: any): any => {
                   return (
                     <FieldBuilder
                       {...fieldProps}
                       {...field}
+                      type={key}
                       form={form}
-                      name={fieldProps?.name}
+                      name={fieldProps.id}
                       value={field?.value || ''}
                       onChange={field.onChange}
                       error={!!formState.errors[field.name]}
-                      label={formState.errors[field.name]?.message  || fieldProps?.label}
+                      label={formState.errors[field.name]?.message || fieldProps?.label}
                       {...controller}
                     />
                   );

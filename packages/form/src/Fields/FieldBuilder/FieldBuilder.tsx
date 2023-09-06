@@ -12,6 +12,7 @@ import File from './File/File';
 import Datepicker from './Datepicker/Datepicker';
 import Toggle from './Toggle/Toggle';
 
+// TODO:
 const Controller: any = {
   [FIELD_TYPE.TEXT]: Text,
   [FIELD_TYPE.TEXTAREA]: Textarea,
@@ -31,7 +32,7 @@ const FieldBuilder = forwardRef((props: TFieldBuilderProps, ref) => {
   useEffect(() => {
     return () => {
       // INFO: for handle value when a component hide or show
-      setValue(props?.name, null);
+      setValue(props?.type, null);
     };
   }, []);
 
