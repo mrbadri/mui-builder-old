@@ -2,7 +2,7 @@ const text = {
   label: 'Email',
   type: 'text',
   col: { xs: 6 },
-  controller : 'console.log(fields); if(fields.test12?.value === 1 && fields.multiSelect?.[0].value === 1) return {sx:{bgcolor: "green"} , helperText: "ali" }; else return {disabled: true}',
+  controller : 'console.log(fields); if(fields.test12?.value === 1 && fields.multiSelect?.[0]?.value === 1) return {sx:{bgcolor: "green"} , helperText: "ali" }; else return {disabled: true}',
   rules: {
     // minLength: {
     //   value: 10,
