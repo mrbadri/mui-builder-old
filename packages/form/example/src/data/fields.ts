@@ -4,7 +4,7 @@ const text = {
   type: 'text',
   col: { xs: 6 },
   controller:
-    'console.log("HI" , fields); if(fields.test12?.id === 1) { form.setValue("text12" , "test value"); return {sx:{bgcolor: "green"} , helperText: "ali" };} else{form.setValue("text12" , null); return {disabled: true}}',
+    'if(form.getValues().test12?.id === 1) { form.setValue("text12" , "test value"); return {sx:{bgcolor: "green"} , helperText: "ali" };} else{form.setValue("text12" , null); return {disabled: true}}',
   rules: {
     // minLength: {
     //   value: 10,

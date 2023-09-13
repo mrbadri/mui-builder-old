@@ -37,7 +37,7 @@ const FieldBuilder = forwardRef((props: TFieldBuilderProps, ref) => {
   }, []);
 
   return (
-      <Field {...props} ref={ref} />
+    <Field {...props} ref={ref} />
   );
 });
 
