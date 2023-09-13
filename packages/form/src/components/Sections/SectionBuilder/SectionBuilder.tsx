@@ -1,5 +1,5 @@
 import React from 'react';
-import Nested from '../../../utils/Nested/Nested';
+import Nested from '../../Nested/Nested';
 import { Box } from '@mui/material';
 
 const SectionBuilder = (props: any) => {

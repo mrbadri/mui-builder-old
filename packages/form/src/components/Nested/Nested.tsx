@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Elements from '../../components/Elements/Elements';
-import ElementBuilder from '../../components/Elements/ElementBuilder/ElementBuilder';
+import Elements from '../Elements/Elements';
+import ElementBuilder from '../Elements/ElementBuilder/ElementBuilder';
 
 const Nested = (props: any) => {
   return (

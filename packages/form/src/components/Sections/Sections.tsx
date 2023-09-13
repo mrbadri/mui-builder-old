@@ -1,7 +1,7 @@
 import React from 'react';
 
 import SectionBuilder from './SectionBuilder/SectionBuilder';
-import Nested from '../../utils/Nested/Nested';
+import Nested from '../Nested/Nested';
 
 const Sections = (props: any) => {
   return (
