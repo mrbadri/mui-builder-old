@@ -22,7 +22,7 @@ const Fields = ({ form, list }: TFieldsProps) => {
         // DESTRUCTURE PROPS
         const { col = {}, controller = '', rules, ...fieldProps } = list[id];
         const { xs = 12, sm, md, lg } = col;
-        const getConditionalProps = convertFunction(controller);
+        const getConditionalProps = convertFunction(controller, "fields", "form");
         const { hide, ...conditionalProps } = getConditionalProps(getValues(), form);
 
         if (!hide)

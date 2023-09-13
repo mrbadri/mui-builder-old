@@ -1,6 +1,6 @@
 import { TConvertFunctionProps } from './convertFuunction.types';
 
-const convertFunction = (fn: TConvertFunctionProps) => {
+const convertFunction = (fn: TConvertFunctionProps , ...props: string[]) => {
   if (!fn)
     return () => {
       return {};
@@ -8,7 +8,7 @@ const convertFunction = (fn: TConvertFunctionProps) => {
 
   if (typeof fn === 'function') return fn;
 
-  return new Function('fields' , "form", fn);
+  return new Function(...props, fn);
 };
 
 export default convertFunction;
