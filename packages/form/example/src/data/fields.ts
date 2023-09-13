@@ -2,7 +2,8 @@ const text = {
   label: 'Email',
   type: 'text',
   col: { xs: 6 },
-  controller : 'console.log(fields); if(fields.test12?.value === 1 && fields.multiSelect?.[0]?.value === 1) return {sx:{bgcolor: "green"} , helperText: "ali" }; else return {disabled: true}',
+  controller:
+    'console.log(fields); if(fields.test12?.value === 1 && fields.multiSelect?.[0]?.value === 1) return {sx:{bgcolor: "green"} , helperText: "ali" }; else return {disabled: true}',
   rules: {
     // minLength: {
     //   value: 10,
@@ -57,12 +58,16 @@ const select = {
   rules: {
     // required: 'is required',
   },
-  options: [
-    { label: 'hi1', value: 1 },
-    { label: 'hi2', value: 2 },
-    { label: 'hi3', value: 3 },
-    { label: 'hi4', value: 4 },
-  ],
+  options: {
+    api: { url: 'https://jsonplaceholder.typicode.com/todos/2', method: 'post', data: { test: 'klsjlk' } },
+    query: {},
+  },
+  // options: [
+  //   { label: 'hi1', id: 1 },
+  //   { label: 'hi2', id: 2 },
+  //   { label: 'hi3', id: 3 },
+  //   { label: 'hi4', id: 4 },
+  // ],
 };
 const multiSelect = {
   label: 'multi Select',
@@ -113,8 +118,8 @@ export const fieldsSampleOne = {
   // radio,
   // checkbox,
   // checkbox2,
- test12: select,
-  multiSelect,
+  test12: select,
+  // multiSelect,
   // attachment,
   // // this datepicker get all of react-multi-datepicker props
   // datepicker,
