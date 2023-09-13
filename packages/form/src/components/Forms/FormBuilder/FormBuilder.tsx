@@ -4,9 +4,9 @@ import { useForm } from 'react-hook-form';
 
 import Fields from '../../Fields/Fields';
 import { TFormBuilderProps } from './FormBuilder.types';
-import { useConfig } from '../../hooks/config/useConfig';
+import { useConfig } from '../../../hooks/config/useConfig';
 import Actions from '../../Actions/Actions';
-import useFormController from '../../hooks/formController/formController';
+import useFormController from '../../../hooks/formController/formController';
 import { useQuery } from '@tanstack/react-query';
 import { ACTION_TYPE } from '../../Actions/ActionsBuilder/ActionsBuilder.types';
 import { AxiosRequestConfig } from 'axios';

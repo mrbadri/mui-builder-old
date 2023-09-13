@@ -1,6 +1,6 @@
 import { TFieldProps } from './FieldBuilder/FieldBuilder.types';
-import { TForm } from '../hooks/formController/formController.types';
-import { TCol } from '../types/public';
+import { TForm } from '../../hooks/formController/formController.types';
+import { TCol } from '../../types/public';
 
 // #TODO: change types
 

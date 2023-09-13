@@ -1,5 +1,5 @@
 import { FieldValues, RegisterOptions } from 'react-hook-form';
-import { TForm } from '../../hooks/formController/formController.types';
+import { TForm } from '../../../hooks/formController/formController.types';
 
 export interface TFieldBuilderProps {
   type:  FIELD_TYPE | 'config';

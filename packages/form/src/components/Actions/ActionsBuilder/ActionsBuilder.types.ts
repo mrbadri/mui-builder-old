@@ -1,6 +1,6 @@
 import { AxiosRequestConfig } from 'axios';
 import { TFormId } from '../../Forms/FormBuilder/FormBuilder.types';
-import { TForm } from '../../hooks/formController/formController.types';
+import { TForm } from '../../../hooks/formController/formController.types';
 import { SxProps, Theme } from '@mui/material';
 
 // export interface TActionBuilderApi {

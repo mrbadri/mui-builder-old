@@ -1,4 +1,4 @@
-import { TNestedProps } from '../utils/Nested/Nested.types';
+import { TNestedProps } from '../../utils/Nested/Nested.types';
 import { TSectionBuilderProps } from './SectionBuilder/SectionBuilder.types';
 
 export interface SectionsProps extends TNestedProps {

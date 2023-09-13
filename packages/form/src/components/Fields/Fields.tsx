@@ -6,7 +6,7 @@ import { getLIstWatch } from './Fields.tools';
 // import controllerFunction from '../utils/controllerFunction/controllerFunction';
 import FieldBuilder from './FieldBuilder/FieldBuilder';
 import Grid2 from '@mui/material/Unstable_Grid2/Grid2';
-import convertFunction from '../utils/convertFuunction/convertFuunction';
+import convertFunction from '../../utils/convertFuunction/convertFuunction';
 
 const Fields = ({ form, list }: TFieldsProps) => {
   // DESTRUCTURE FORM

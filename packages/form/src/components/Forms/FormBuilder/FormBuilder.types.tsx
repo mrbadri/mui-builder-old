@@ -1,6 +1,6 @@
 import { TListActionProps } from '../../Actions/Actions.types';
 import { TListFieldProps } from '../../Fields/Fields.types';
-import { TForm } from '../../hooks/formController/formController.types';
+import { TForm } from '../../../hooks/formController/formController.types';
 import { GridBaseProps } from '@mui/system/Unstable_Grid';
 
 
