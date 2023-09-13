@@ -3,7 +3,7 @@ const text = {
   type: 'text',
   col: { xs: 6 },
   controller:
-    'console.log(fields); if(fields.test12?.value === 1 && fields.multiSelect?.[0]?.value === 1) return {sx:{bgcolor: "green"} , helperText: "ali" }; else return {disabled: true}',
+    'console.log("HI" , fields); if(fields.test12?.id === 1) { form.setValue("text12" , "test value"); return {sx:{bgcolor: "green"} , helperText: "ali" };} else{form.setValue("text12" , null); return {disabled: true}}',
   rules: {
     // minLength: {
     //   value: 10,
@@ -58,16 +58,16 @@ const select = {
   rules: {
     // required: 'is required',
   },
-  options: {
-    api: { url: 'https://jsonplaceholder.typicode.com/todos/2', method: 'post', data: { test: 'klsjlk' } },
-    query: {},
-  },
-  // options: [
-  //   { label: 'hi1', id: 1 },
-  //   { label: 'hi2', id: 2 },
-  //   { label: 'hi3', id: 3 },
-  //   { label: 'hi4', id: 4 },
-  // ],
+  // options: {
+  //   api: { url: 'https://jsonplaceholder.typicode.com/todos/2', method: 'post', data: { test: 'klsjlk' } },
+  //   query: {},
+  // },
+  options: [
+    { label: 'hi1', id: 1 },
+    { label: 'hi2', id: 2 },
+    { label: 'hi3', id: 3 },
+    { label: 'hi4', id: 4 },
+  ],
 };
 const multiSelect = {
   label: 'multi Select',
