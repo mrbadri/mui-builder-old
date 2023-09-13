@@ -18,9 +18,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mrbadri/mui-builder/packages/form"
+    "url": "https://github.com/mrbadri/mui-builder"
   },
-  "homepage": "https://github.com/mrbadri/mui-builder/packages/form#readme",
+  "homepage": "https://github.com/mrbadri/mui-builder#readme",
   "keywords": [],
   "author": "",
   "license": "MIT",
