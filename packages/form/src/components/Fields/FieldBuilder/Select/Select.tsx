@@ -35,7 +35,6 @@ const Select = forwardRef((props: any, ref) => {
   return (
     <Autocomplete
       isOptionEqualToValue={(option: any, value) => {
-        console.log({ option, value })
         return (option?.id === value?.id)
       }}
       defaultValue={{ label: '', value: '' }}

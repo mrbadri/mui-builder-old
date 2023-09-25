@@ -1,1 +1,1 @@
-export type TConvertFunctionProps = string | ((args: any) => any);
+export type TConvertFunctionProps = string | ((args: any) => any) | undefined;

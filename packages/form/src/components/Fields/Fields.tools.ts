@@ -13,16 +13,24 @@ export function getEffectiveFields(inputString: string = '', currentFieldName: s
   return names;
 }
 
+// TODO: change base on form.getValues()
 export const getLIstWatch = (fields: any) => {
   const arr: string[][] = [];
+  const arrN: string[] = [];
 
   Object.keys(fields).map((key: string) => {
     const field: TFieldProps = fields[key];
 
     if (!!field?.controller) {
-      arr.push(getEffectiveFields(field?.controller, field.id));
+      console.log({ field });
+
+      arrN.push(key);
+
+      arr.push(getEffectiveFields(field?.controller?.fn, field.id));
     }
   });
+
+  console.log({ arrN  , old: Array.from(new Set(arr.flat()))});
 
   return Array.from(new Set(arr.flat()));
 };

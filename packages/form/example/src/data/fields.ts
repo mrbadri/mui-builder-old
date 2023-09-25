@@ -3,8 +3,27 @@ const text = {
   label: 'Email',
   type: 'text',
   col: { xs: 6 },
-  controller:
-    'if(form.getValues().test12?.id === 1) { form.setValue("text12" , "test value"); return {sx:{bgcolor: "green"} , helperText: "ali" };} else{form.setValue("text12" , null); return {disabled: true}}',
+  // controller: {
+  //   getProps:
+  //     'console.log("test"); if(fields.test12?.id === 1) { form.setValue("text12" , "test value"); return {sx:{bgcolor: "green"} , helperText: "ali" };} else{form.setValue("text12" , null); return {disabled: true}}',
+  //     getDependensise: ''
+  // },
+  controller: {
+    fn: `
+    if(fields.multiSelect?.[0]?.value === 1) {
+        form.setValue("text12" , "test value"); 
+        return { 
+          sx:{bgcolor: "green"}, 
+          helperText: "ali", 
+          disabled: false 
+        };
+      }
+    else {
+      form.setValue("text12" , null);
+      return {disabled: true};
+    }`,
+    dependency: 'return form.getValues().multiSelect?.[0]?.value === 1',
+  },
   rules: {
     // minLength: {
     //   value: 10,
@@ -120,7 +139,7 @@ export const fieldsSampleOne = {
   // checkbox,
   // checkbox2,
   test12: select,
-  // multiSelect,
+  multiSelect,
   // attachment,
   // // this datepicker get all of react-multi-datepicker props
   // datepicker,

@@ -2,7 +2,7 @@ import { FieldValues, RegisterOptions } from 'react-hook-form';
 import { TForm } from '../../../hooks/formController/formController.types';
 
 export interface TFieldBuilderProps {
-  type:  FIELD_TYPE | 'config';
+  type: FIELD_TYPE | 'config';
   form: TForm;
   // TODO: change type
   name: string;
@@ -28,10 +28,15 @@ export type TFieldRules =
   | Omit<RegisterOptions<FieldValues, string>, 'disabled' | 'valueAsNumber' | 'valueAsDate' | 'setValueAs'>
   | undefined;
 
+export interface TController {
+  fn: string;
+  dependency: string;
+}
+
 export interface TFieldProps {
   label?: string;
   type: string;
   id: string;
   rules?: TFieldRules;
-  controller?: string;
+  controller?: TController;
 }

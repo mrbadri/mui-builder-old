@@ -10,20 +10,26 @@ import convertFunction from '../../utils/convertFuunction/convertFuunction';
 
 const Fields = ({ form, list }: TFieldsProps) => {
   // DESTRUCTURE FORM
-  const { control, formState, getValues, watch } = form;
+  const { control, formState, watch } = form;
 
   //TODO: #type
   const listWatch: any = useMemo(() => getLIstWatch(list), [list]);
   watch(listWatch);
+  console.log({ listWatch });
+
 
   return (
     <>
       {Object.keys(list).map((id: string): any => {
         // DESTRUCTURE PROPS
-        const { col = {}, controller = '', rules, ...fieldProps } = list[id];
+        const { col = {}, controller, rules, ...fieldProps } = list[id];
         const { xs = 12, sm, md, lg } = col;
-        const getConditionalProps = convertFunction(controller, "form");
-        const { hide, ...conditionalProps } = getConditionalProps(form);
+        const getConditionalProps = convertFunction(controller?.fn, "form", "fields");
+        const getDependencyConditionalProps = convertFunction(controller?.dependency, "form");
+        const { hide, ...conditionalProps }: any = useMemo(() => getConditionalProps(form, form.getValues()), [getDependencyConditionalProps(form)]);
+        console.log({ conditionalProps });
+
+        // const { hide, ...conditionalProps } = getConditionalProps(form, form.getValues());
 
         if (!hide)
           return (
