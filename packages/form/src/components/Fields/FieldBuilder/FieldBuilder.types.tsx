@@ -6,6 +6,7 @@ export interface TFieldBuilderProps {
   form: TForm;
   // TODO: change type
   name: string;
+  id: string;
 }
 
 export interface TConfig {

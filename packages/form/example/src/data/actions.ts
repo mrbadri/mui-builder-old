@@ -6,7 +6,12 @@ export const actionsSampleOne: TListActionProps = {
     col: { xs: 6 },
     type: ACTION_TYPE.SUBMIT,
     title: 'Submit',
-    api: { url: 'https://jsonplaceholder.typicode.com/todos/2', method: 'post', data: { test: 'klsjlk' } },
+    api: {
+      url: 'return "https://jsonplaceholder.typicode.com/todos/" + form.getValues().FieldText1; ',
+      // params: { id: 1 },
+      method: 'post',
+      data: "console.log('test form value' , form.getValues()); return form.getValues();",
+    },
     onError: (error, form) => {
       console.log('call back', error, form);
     },

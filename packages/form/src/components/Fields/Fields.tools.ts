@@ -22,15 +22,11 @@ export const getLIstWatch = (fields: any) => {
     const field: TFieldProps = fields[key];
 
     if (!!field?.controller) {
-      console.log({ field });
-
       arrN.push(key);
 
       arr.push(getEffectiveFields(field?.controller?.fn, field.id));
     }
   });
-
-  console.log({ arrN  , old: Array.from(new Set(arr.flat()))});
 
   return Array.from(new Set(arr.flat()));
 };

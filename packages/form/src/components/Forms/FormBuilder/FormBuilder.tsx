@@ -4,17 +4,20 @@ import { useForm } from 'react-hook-form';
 
 import Fields from '../../Fields/Fields';
 import { TFormBuilderProps } from './FormBuilder.types';
-import { useConfig } from '../../../hooks/config/useConfig';
+// import { useConfig } from '../../../hooks/config/useConfig';
 import Actions from '../../Actions/Actions';
 import useFormController from '../../../hooks/formController/formController';
-import { useQuery } from '@tanstack/react-query';
+// import { useQuery } from '@tanstack/react-query';
 import { ACTION_TYPE } from '../../Actions/ActionsBuilder/ActionsBuilder.types';
 import { AxiosRequestConfig } from 'axios';
 import Grid2 from '@mui/material/Unstable_Grid2/Grid2';
 import { initialConfigFormBuilder } from './FormBuilder.constant';
+import useCustomQuery from '../../../hooks/customQuery/useCustomQuery';
+// import convertFunction from '../../../utils/convertFuunction/convertFuunction';
+// import handleQueryFn from '../../../utils/handleQueryFn/handleQueryFn';
 
 const FormBuilder = ({ fields, actions, id = useId(), form = useForm(), config = initialConfigFormBuilder }: TFormBuilderProps) => {
-  const { api } = useConfig();
+  // const { api } = useConfig();
   const { setForm } = useFormController();
 
   // SAVE FORM ID
@@ -24,14 +27,11 @@ const FormBuilder = ({ fields, actions, id = useId(), form = useForm(), config =
 
   // SUBMIT ACTION
   const actionSubmit = actions[ACTION_TYPE.SUBMIT];
-  const configApi: AxiosRequestConfig = actionSubmit.api || {};
+  const ApiConfig: AxiosRequestConfig = actionSubmit.api || {};
   const onSuccess = actionSubmit?.onSuccess;
   const onError = actionSubmit?.onError;
 
-  const { refetch } = useQuery({
-    queryFn: () => {
-      api({ ...configApi, data: { ...configApi.data, ...form.getValues() } });
-    },
+  const { refetch } = useCustomQuery(ApiConfig, form, {
     queryKey: ['onSubmitForm', id],
     onSuccess: (res) => {
       console.log("Success", res);
@@ -42,8 +42,8 @@ const FormBuilder = ({ fields, actions, id = useId(), form = useForm(), config =
       console.log("Error:", res);
       if (onError) onError(res, form)
     },
-    enabled: false
   });
+
 
   // CONFIG
   const { layout } = config;

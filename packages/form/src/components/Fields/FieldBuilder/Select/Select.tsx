@@ -12,13 +12,13 @@ const Select = forwardRef((props: any, ref) => {
   // const { api } = useConfig();
 
   // const actionSubmit = actions[ACTION_TYPE.SUBMIT];
-  // const configApi: AxiosRequestConfig = actionSubmit.api || {};
+  // const ApiConfig: AxiosRequestConfig = actionSubmit.api || {};
   // const onSuccess = actionSubmit?.onSuccess;
   // const onError = actionSubmit?.onError;
 
   // const { refetch } = useQuery({
   //   queryFn: () => {
-  //     api(configApi);
+  //     api(ApiConfig);
   //   },
   //   queryKey: ['onSubmitForm'],
   //   onSuccess: (res) => {

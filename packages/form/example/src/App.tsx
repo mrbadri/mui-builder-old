@@ -19,8 +19,6 @@ function App() {
   // }, []);
 
   const form = useForm();
-  console.log("Errors Form", form.formState.errors);
-
   return (
     <>
       <ConfigProvider >

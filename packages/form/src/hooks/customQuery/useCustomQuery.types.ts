@@ -1,13 +1,4 @@
-import { AxiosRequestConfig } from 'axios';
+import { TApiConfig, TQueryOPtions } from '../../types/public';
 import { TForm } from '../formController/formController.types';
-import { UseQueryOptions } from '@tanstack/react-query';
 
-export interface TUseCustomQueryProps {
-  apiConfig: AxiosRequestConfig<any>;
-  options: Omit<UseQueryOptions<unknown, any, any, any>, 'initialData'> & {
-    initialData?: (() => undefined) | undefined;
-    onError?: (data: any) => void;
-    onSuccess?: (data: any) => void;
-  };
-  form: TForm;
-}
+export type TUseCustomQueryProps = [TApiConfig, TForm, Omit<TQueryOPtions, 'queryFn'>];

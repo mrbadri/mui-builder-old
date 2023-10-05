@@ -15,7 +15,6 @@ const Fields = ({ form, list }: TFieldsProps) => {
   //TODO: #type
   const listWatch: any = useMemo(() => getLIstWatch(list), [list]);
   watch(listWatch);
-  console.log({ listWatch });
 
 
   return (
@@ -27,11 +26,7 @@ const Fields = ({ form, list }: TFieldsProps) => {
         const getConditionalProps = convertFunction(controller?.fn, "form", "fields");
         const getDependencyConditionalProps = convertFunction(controller?.dependency, "form");
         const { hide, ...conditionalProps }: any = useMemo(() => getConditionalProps(form, form.getValues()), [getDependencyConditionalProps(form)]);
-        console.log({ conditionalProps });
 
-        // const { hide, ...conditionalProps } = getConditionalProps(form, form.getValues());
-
-        if (!hide)
           return (
             <Grid2 key={id} xs={xs} sm={sm} md={md} lg={lg}>
               <Controller

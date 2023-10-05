@@ -1,6 +1,6 @@
 import { TConvertFunctionProps } from './convertFuunction.types';
 
-const convertFunction = (fn: TConvertFunctionProps , ...props: string[]) => {
+const convertFunction = (fn: TConvertFunctionProps, ...props: string[]) => {
   if (!fn)
     return () => {
       return {};

@@ -32,7 +32,7 @@ const FieldBuilder = forwardRef((props: TFieldBuilderProps, ref) => {
   useEffect(() => {
     return () => {
       // INFO: for handle value when a component hide or show
-      setValue(props?.type, null);
+      setValue(props?.id, null);
     };
   }, []);
 

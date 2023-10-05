@@ -10,12 +10,12 @@ export default function App() {
   // });
 
   // your custom function with watched values
-  const yourCustomFunction = () => {
-    console.log(watch());
-  }
+  // const yourCustomFunction = () => {
+  //   // console.log(watch());
+  // }
 
   // Execute your custom function
-  yourCustomFunction();
+  // yourCustomFunction();
 
   return (
     <form onSubmit={handleSubmit(data => console.log(data))}>

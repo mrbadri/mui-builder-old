@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-const text = {
+const FieldText1 = {
   label: 'Email',
   type: 'text',
   col: { xs: 6 },
@@ -8,22 +8,22 @@ const text = {
   //     'console.log("test"); if(fields.test12?.id === 1) { form.setValue("text12" , "test value"); return {sx:{bgcolor: "green"} , helperText: "ali" };} else{form.setValue("text12" , null); return {disabled: true}}',
   //     getDependensise: ''
   // },
-  controller: {
-    fn: `
-    if(fields.multiSelect?.[0]?.value === 1) {
-        form.setValue("text12" , "test value"); 
-        return { 
-          sx:{bgcolor: "green"}, 
-          helperText: "ali", 
-          disabled: false 
-        };
-      }
-    else {
-      form.setValue("text12" , null);
-      return {disabled: true};
-    }`,
-    dependency: 'return form.getValues().multiSelect?.[0]?.value === 1',
-  },
+  // controller: {
+  //   fn: `
+  //   if(fields.multiSelect?.[0]?.value === 1) {
+  //       form.setValue("text12" , "test value"); 
+  //       return { 
+  //         sx:{bgcolor: "green"}, 
+  //         helperText: "ali", 
+  //         disabled: false 
+  //       };
+  //     }
+  //   else {
+  //     form.setValue("text12" , null);
+  //     return {disabled: true};
+  //   }`,
+  //   dependency: 'return form.getValues().multiSelect?.[0]?.value === 1',
+  // },
   rules: {
     // minLength: {
     //   value: 10,
@@ -133,13 +133,13 @@ const toggle = {
 };
 
 export const fieldsSampleOne = {
-  text12: text,
+  FieldText1,
   // textarea,
   // radio,
   // checkbox,
   // checkbox2,
-  test12: select,
-  multiSelect,
+  // test12: select,
+  multiSelect2:multiSelect,
   // attachment,
   // // this datepicker get all of react-multi-datepicker props
   // datepicker,
