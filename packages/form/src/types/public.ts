@@ -10,10 +10,15 @@ export interface TCol {
 
 export type TQuery = Omit<UseQueryOptions, 'initialData'> & { initialData?: () => undefined };
 
-export type TQueryOPtions = Omit<UseQueryOptions<unknown, any, any, any>, 'initialData'> & {
+export type TQueryOPtions = Omit<UseQueryOptions<unknown, any, any, any>, 'initialData' | 'onError' | 'onSuccess'> & {
   initialData?: (() => undefined) | undefined;
-  onError?: (data: any) => void;
-  onSuccess?: (data: any) => void;
+  onError?: string | ((data: any) => void);
+  onSuccess?: string | ((data: any) => void);
 };
 
 export type TApiConfig = AxiosRequestConfig<any>;
+
+export interface TApi {
+  config: AxiosRequestConfig;
+  query: Omit<TQueryOPtions, 'queryFn'>;
+}

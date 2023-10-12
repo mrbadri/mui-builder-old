@@ -1,7 +1,7 @@
-import { AxiosRequestConfig } from 'axios';
 import { TFormId } from '../../Forms/FormBuilder/FormBuilder.types';
 import { TForm } from '../../../hooks/formController/formController.types';
 import { SxProps, Theme } from '@mui/material';
+import { TApi } from '../../../types/public';
 
 // export interface TActionBuilderApi {
 //   method: string;
@@ -16,7 +16,7 @@ export enum ACTION_TYPE {
 }
 
 export interface TActionBuilderProps {
-  api?: AxiosRequestConfig;
+  api?: TApi;
   type: ACTION_TYPE;
   title: string;
   formId: TFormId;

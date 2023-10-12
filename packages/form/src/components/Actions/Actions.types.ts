@@ -5,6 +5,5 @@ import { ACTION_TYPE, TActionBuilderProps } from './ActionsBuilder/ActionsBuilde
 export type TListActionProps = Record<ACTION_TYPE, Omit<TActionBuilderProps & { col?: TCol }, 'formId'>>;
 
 export interface TActionsProps {
-  list: TListActionProps;
   formId: TFormId;
 }

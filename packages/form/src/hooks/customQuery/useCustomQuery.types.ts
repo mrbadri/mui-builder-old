@@ -1,4 +1,4 @@
+import { TFormId } from '../../components/Forms/FormBuilder/FormBuilder.types';
 import { TApiConfig, TQueryOPtions } from '../../types/public';
-import { TForm } from '../formController/formController.types';
 
-export type TUseCustomQueryProps = [TApiConfig, TForm, Omit<TQueryOPtions, 'queryFn'>];
+export type TUseCustomQueryProps = [TApiConfig, TFormId, Omit<TQueryOPtions, 'queryFn'>];

@@ -1,6 +1,6 @@
 import { TFieldProps } from './FieldBuilder/FieldBuilder.types';
-import { TForm } from '../../hooks/formController/formController.types';
 import { TCol } from '../../types/public';
+import { TFormId } from '../Forms/FormBuilder/FormBuilder.types';
 
 // #TODO: change types
 
@@ -11,6 +11,5 @@ import { TCol } from '../../types/public';
 export type TListFieldProps = Record<string, Omit<(TFieldProps & { col?: TCol }), 'id'>>;
 
 export interface TFieldsProps {
-  list: TListFieldProps;
-  form: TForm;
+  formId: TFormId
 }

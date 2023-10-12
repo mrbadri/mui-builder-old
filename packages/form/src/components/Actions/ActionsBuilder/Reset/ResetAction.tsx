@@ -21,8 +21,8 @@ const ResetAction: FC<TActionBuilderProps> = ({
     disableElevation,
     disableFocusRipple,
 }) => {
-    const { forms } = useFormController();
-    const form = forms[formId];
+    const { formControllers } = useFormController();
+    const { form } = formControllers[formId];
 
     return <LoadingButton
         sx={sx}
