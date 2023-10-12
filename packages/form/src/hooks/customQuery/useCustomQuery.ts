@@ -15,8 +15,6 @@ const useCustomQuery = (...args: TUseCustomQueryProps) => {
 
   const { api } = useConfig();
 
-  console.log({ controller, formControllers, formId });
-
   return useQuery({
     queryFn: () => {
       handleQueryFn({ api, config, controller });

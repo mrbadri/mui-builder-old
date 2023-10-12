@@ -4,7 +4,6 @@ import { TFormControllerState } from './formController.types';
 const useFormController = create<TFormControllerState>((set) => ({
   formControllers: {},
   setForm: (formId, formController) => {
-    console.log('input', { formController });
 
     set((state) => ({
       formControllers: { ...state.formControllers, [formId]: { ...formController, updateField: state.updateField , formId } },

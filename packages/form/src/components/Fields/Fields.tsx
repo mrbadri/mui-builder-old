@@ -31,6 +31,9 @@ const Fields = ({ formId }: TFieldsProps) => {
   watch(listWatch);
 
 
+  
+
+
   return (
     <>
       {Object.keys(fields).map((id: string): any => {
@@ -42,9 +45,6 @@ const Fields = ({ formId }: TFieldsProps) => {
         // TODO: #condition add alternative controller from state management
         const { hide, ...conditionalProps }: any = useMemo(() => getConditionalProps(form, form.getValues()), [getDependencyConditionalProps(form)]);
 
-        console.log("-----");
-        console.log({ id ,  conditionalProps });
-        console.log("-----");
 
 
 

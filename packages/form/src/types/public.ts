@@ -1,5 +1,6 @@
 import { UseQueryOptions } from '@tanstack/react-query';
 import { AxiosRequestConfig } from 'axios';
+import { FieldValues, UseFormReturn } from 'react-hook-form';
 
 export interface TCol {
   xs?: number;
@@ -22,3 +23,6 @@ export interface TApi {
   config: AxiosRequestConfig;
   query: Omit<TQueryOPtions, 'queryFn'>;
 }
+
+
+export type TForm = UseFormReturn<FieldValues, any, undefined>;

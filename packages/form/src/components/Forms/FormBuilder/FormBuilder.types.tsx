@@ -9,7 +9,7 @@ export interface TConfigFormBuilder {
 }
 
 export interface TFormBuilderProps {
-  id?: string;
+  formId?: TFormId;
   form?: TForm,
   fields: TListFieldProps;
   actions: TListActionProps;
