@@ -3,13 +3,6 @@ import { TForm } from '../../../hooks/formController/formController.types';
 import { SxProps, Theme } from '@mui/material';
 import { TApi } from '../../../types/public';
 
-// export interface TActionBuilderApi {
-//   method: string;
-//   url: string;
-//   body: object;
-//   params: object;
-// }
-
 export enum ACTION_TYPE {
   SUBMIT = 'submit',
   RESET = 'reset',

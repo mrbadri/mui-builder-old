@@ -1,70 +1,60 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useMemo } from 'react';
 
-import { TFieldsProps } from './Fields.types';
 import { Controller } from 'react-hook-form';
-import { getLIstWatch } from './Fields.tools';
-// import controllerFunction from '../utils/controllerFunction/controllerFunction';
-import FieldBuilder from './FieldBuilder/FieldBuilder';
+import { TFieldsProps } from './Fields.types';
 import Grid2 from '@mui/material/Unstable_Grid2/Grid2';
+import useFieldsStore from '../../hooks/useFieldsStore/useFieldsStore';
+import useFromsStore from '../../hooks/useFormsStore/useFormsStore';
 import convertFunction from '../../utils/convertFuunction/convertFuunction';
-import useFormController from '../../hooks/formController/formController';
+import FieldBuilder from './FieldBuilder/FieldBuilder';
+
+// import { getLIstWatch } from './Fields.tools';
 
 const Fields = ({ formId }: TFieldsProps) => {
+  // FORMS
+  const { forms } = useFromsStore();
+  const currentForm = forms[formId];
 
-  const { formControllers } = useFormController();
+  // FIELDS
+  const { fields } = useFieldsStore();
+  const currentFormFields = fields[formId];
 
-  // TODO: add form ID
-  const controller = formControllers[formId];
-  const { form, fields } = controller;
-
-  // DESTRUCTURE FORM
-  const { control, formState, watch } = form;
-
-  useEffect(() => {
-    if (controller?.updateField)
-      controller?.updateField(formId, "FieldText1", { label: "testHook444" });
-  }, []);
+  currentForm.watch();
 
 
   //TODO: #type
-  const listWatch: any = useMemo(() => getLIstWatch(fields), [fields]);
-  watch(listWatch);
-
-
-  
-
+  // const listWatch: any = useMemo(() => getLIstWatch(currentFormFields), [currentFormFields]);
+  // currentForm.watch(listWatch);
 
   return (
     <>
-      {Object.keys(fields).map((id: string): any => {
+      {Object.keys(currentFormFields).map((id: string): any => {
         // DESTRUCTURE PROPS
-        const { col = {}, controller, rules, ...fieldProps } = fields[id];
+        const { col = {}, controller, rules, ...fieldProps } = currentFormFields[id];
         const { xs = 12, sm, md, lg } = col;
         const getConditionalProps = convertFunction(controller?.fn, "form", "fields");
         const getDependencyConditionalProps = convertFunction(controller?.dependency, "form");
         // TODO: #condition add alternative controller from state management
-        const { hide, ...conditionalProps }: any = useMemo(() => getConditionalProps(form, form.getValues()), [getDependencyConditionalProps(form)]);
-
-
-
+        const { hide, ...conditionalProps }: any = useMemo(() => getConditionalProps(currentForm, currentForm.getValues()), [getDependencyConditionalProps(currentForm)]);
 
         return (
           <Grid2 key={id} xs={xs} sm={sm} md={md} lg={lg}>
             <Controller
               name={id}
               rules={rules}
-              control={control}
+              control={currentForm.control}
               render={({ field }: any): any => {
                 return (
                   <FieldBuilder
                     {...fieldProps}
                     {...field}
                     id={id}
-                    form={form}
+                    form={currentForm}
+                    formid={formId}
                     onChange={field.onChange}
                     value={field?.value || ''}
-                    error={!!formState.errors[field.name]}
-                    label={formState.errors[field.name]?.message || fieldProps?.label}
+                    error={!!currentForm.formState.errors[field.name]}
+                    label={currentForm.formState.errors[field.name]?.message || fieldProps?.label}
                     {...conditionalProps}
                   />
                 );

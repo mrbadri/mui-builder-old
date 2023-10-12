@@ -1,12 +1,16 @@
 import { Autocomplete } from '@mui/material';
 import React, { forwardRef } from 'react';
 import BaseInput from '../BaseInput/BaseInput';
+import useFromsStore from '../../../../hooks/useFormsStore/useFormsStore';
 // import { useQuery } from '@tanstack/react-query';
 // import { useConfig } from '../../../hooks/config/useConfig';
 
 const Select = forwardRef((props: any, ref) => {
   const { helperText, error, label, onChange, ...otherProps } = props;
-  const { setValue } = props.form;
+
+  const { forms } = useFromsStore();
+  const currentForm = forms[props.formid];
+
 
   // TODO: handle API Option 
   // const { api } = useConfig();
@@ -41,7 +45,7 @@ const Select = forwardRef((props: any, ref) => {
       renderInput={(params) => <BaseInput helperText={helperText} error={error} label={label} {...params} />}
       options={otherProps.options}
       onChange={(_event, newInputValue) => {
-        setValue(props?.id, newInputValue);
+        currentForm.setValue(props?.id, newInputValue);
       }}
       ref={ref}
       {...otherProps}

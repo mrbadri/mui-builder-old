@@ -1,6 +1,6 @@
 import convertFunction from '../../utils/convertFuunction/convertFuunction';
-import { TForm } from '../formController/formController.types';
+import { TController } from '../useController/useController.types';
 
-export const enabledController = (input: boolean | string | undefined = false, form: TForm) => {
-  return typeof input === 'boolean' ? () => input : convertFunction(input, 'form')(form);
+export const enabledController = (enabled: boolean | string | undefined = false, controller: TController) => {
+  return typeof enabled === 'boolean' ? () => enabled : convertFunction(enabled, 'controller')(controller);
 };

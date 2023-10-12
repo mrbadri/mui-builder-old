@@ -21,7 +21,7 @@ export type TApiConfig = AxiosRequestConfig<any>;
 
 export interface TApi {
   config: AxiosRequestConfig;
-  query: Omit<TQueryOPtions, 'queryFn'>;
+  query?: Omit<TQueryOPtions, 'queryFn'>;
 }
 
 

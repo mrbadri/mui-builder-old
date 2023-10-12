@@ -1,8 +1,8 @@
 import React, { FC } from "react";
 
-import { TActionBuilderProps } from "../ActionsBuilder.types";
-import useFormController from "../../../../hooks/formController/formController";
 import LoadingButton from '@mui/lab/LoadingButton';
+import useFromsStore from "../../../../hooks/useFormsStore/useFormsStore";
+import { TActionBuilderProps } from "../ActionsBuilder.types";
 
 
 const ResetAction: FC<TActionBuilderProps> = ({
@@ -21,8 +21,8 @@ const ResetAction: FC<TActionBuilderProps> = ({
     disableElevation,
     disableFocusRipple,
 }) => {
-    const { formControllers } = useFormController();
-    const { form } = formControllers[formId];
+    const { forms } = useFromsStore();
+    const currentForm = forms[formId];
 
     return <LoadingButton
         sx={sx}
@@ -35,7 +35,7 @@ const ResetAction: FC<TActionBuilderProps> = ({
         startIcon={startIcon}
         fullWidth={fullWidth}
         variant={variant || 'outlined'}
-        onClick={() => { form.reset() }}
+        onClick={() => { currentForm.reset() }}
         disableElevation={disableElevation}
         loadingIndicator={loadingIndicator}
         disableFocusRipple={disableFocusRipple}

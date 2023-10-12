@@ -11,8 +11,9 @@ import MultiSelect from './MultiSelect/MultiSelect';
 import File from './File/File';
 import Datepicker from './Datepicker/Datepicker';
 import Toggle from './Toggle/Toggle';
+import useFromsStore from '../../../hooks/useFormsStore/useFormsStore';
 
-// TODO:
+// TODO: handle with lazy import 
 const Controller: any = {
   [FIELD_TYPE.TEXT]: Text,
   [FIELD_TYPE.TEXTAREA]: Textarea,
@@ -27,12 +28,16 @@ const Controller: any = {
 
 const FieldBuilder = forwardRef((props: TFieldBuilderProps, ref) => {
   const Field = Controller?.[props?.type] ?? BaseInput;
-  const { setValue } = props.form;
+
+  const { forms } = useFromsStore();
+  const currentForm = forms[props.formid];
+
+  console.log({ currentForm , test: props.formid });
 
   useEffect(() => {
     return () => {
       // INFO: for handle value when a component hide or show
-      setValue(props?.id, null);
+      currentForm.setValue(props?.id, null);
     };
   }, []);
 
