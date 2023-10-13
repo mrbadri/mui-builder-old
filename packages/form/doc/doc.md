@@ -71,6 +71,7 @@ enum ACTION_TYPE {
 interface TActionProps {
   api?: TApi;
   type: ACTION_TYPE | string;
+  col?: TCol;
   title: string;
   formId: TFormId;
   onSuccess?: (responseApi: unknown, form: TForm) => void;
