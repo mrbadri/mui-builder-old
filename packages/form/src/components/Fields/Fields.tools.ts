@@ -21,10 +21,10 @@ export const getLIstWatch = (fields: any) => {
   Object.keys(fields).map((key: string) => {
     const field: TFieldProps = fields[key];
 
-    if (!!field?.controller) {
+    if (!!field?.script) {
       arrN.push(key);
 
-      arr.push(getEffectiveFields(field?.controller?.fn, field.id));
+      arr.push(getEffectiveFields(field?.script?.fn, field.id));
     }
   });
 

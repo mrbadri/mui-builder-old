@@ -5,8 +5,6 @@ const useActionsStore = create<TActionsState>((set) => ({
   actions: {},
 
   addActions: ({ actions, formId }) => {
-    console.log({ actions, formId });
-
     set((state) => ({
       ...state,
       actions: { ...state.actions, [formId]: actions },

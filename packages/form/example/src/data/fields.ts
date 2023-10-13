@@ -2,32 +2,13 @@
 const FieldText1 = {
   label: 'Email',
   type: 'text',
-  col: { xs: 6 },
-  // controller: {
-  //   getProps:
-  //     'console.log("test"); if(fields.test12?.id === 1) { form.setValue("text12" , "test value"); return {sx:{bgcolor: "green"} , helperText: "ali" };} else{form.setValue("text12" , null); return {disabled: true}}',
-  //     getDependensise: ''
-  // },
-  controller: {
+  col: { xs: 9 },
+  script: {
     fn: `
-    if(fields.multiSelect2?.[0]?.value === 1) {
-        form.setValue("text12" , "test value"); 
-        return { 
-          sx:{bgcolor: "red"}, 
-          helperText: "ali", 
-          disabled: false 
-        };
-      }
-    else {
-      form.setValue("text12" , null);
-      return {disabled: true};
+    if(controller?.forms?.[controller.formId]?.getValues()?.multiSelect2?.[0]?.value === 1) {
+      controller?.updateField({ formId:controller.formId, id:'FieldText1', field:{label: 'tes'} })
     }`,
-    dependency: 'return form.getValues().multiSelect2?.[0]?.value === 1',
-    api: {
-      config: '',
-      target: '',
-      query: '',
-    },
+    dependency: 'return controller?.forms?.[controller.formId]?.getValues().multiSelect2',
   },
   rules: {
     // minLength: {
@@ -99,6 +80,24 @@ const multiSelect = {
   type: 'multiSelect',
   rules: {
     // required: 'multi Select is required',
+  },
+  script: {
+    fn: `
+    if(controller?.forms?.[controller.formId]?.getValues()?.FieldText1 == 1) {
+      console.log('oooo')
+      controller?.updateField({ 
+        formId:controller.formId, 
+        id:'multiSelect2', 
+        field:{options: [
+          { label: 'ooo', id: 1 },
+          { label: 'xxx', id: 2 },
+          { label: '444', id: 3 },
+          { label: '8', id: 4 },
+        ]} 
+      })
+    }`,
+    
+    dependency: `return controller?.forms?.[controller.formId]?.getValues().FieldText1`,
   },
   options: [
     { label: 'hi1', value: 1 },

@@ -41,5 +41,5 @@ export interface TFieldProps {
   type: string;
   id: string;
   rules?: TFieldRules;
-  controller?: TController;
+  script?: TController;
 }
