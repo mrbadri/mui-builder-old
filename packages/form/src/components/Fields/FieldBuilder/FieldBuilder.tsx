@@ -32,8 +32,6 @@ const FieldBuilder = forwardRef((props: TFieldBuilderProps, ref) => {
   const { forms } = useFromsStore();
   const currentForm = forms[props.formid];
 
-  console.log({ currentForm , test: props.formid });
-
   useEffect(() => {
     return () => {
       // INFO: for handle value when a component hide or show

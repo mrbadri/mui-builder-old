@@ -16,7 +16,7 @@ const FieldText1 = {
       url: 'return "https://jsonplaceholder.typicode.com/todo8888s/" + controller?.forms[controller.formId].getValues().FieldText1; ',
       // params: { id: 1 },
       method: 'post',
-      data: "console.log('test form value' , controller?.forms[controller.formId].getValues());  return controller?.forms[controller.formId].getValues();",
+      data: "return controller?.forms[controller.formId].getValues();",
     },
     query: {
       onError:
@@ -99,7 +99,6 @@ const multiSelect = {
   script: {
     fn: `
     if(controller?.forms?.[controller.formId]?.getValues()?.FieldText1 == 1) {
-      console.log('oooo')
       controller?.updateField({ 
         formId:controller.formId, 
         id:'multiSelect2', 

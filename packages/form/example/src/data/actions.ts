@@ -11,7 +11,7 @@ export const actionsSampleOne: TListActionProps = {
         url: 'return "https://jsonplaceholder.typicode.com/todos/" + controller?.forms[controller.formId].getValues().FieldText1; ',
         // params: { id: 1 },
         method: 'post',
-        data: "console.log('test form value' , controller?.forms[controller.formId].getValues());  return controller?.forms[controller.formId].getValues();",
+        data: "return controller?.forms[controller.formId].getValues();",
       },
       query: {
         onError:

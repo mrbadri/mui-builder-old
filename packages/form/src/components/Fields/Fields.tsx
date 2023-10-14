@@ -49,12 +49,7 @@ const Fields = ({ formId }: TFieldsProps) => {
               ...api?.query
             });
 
-          console.log({ api });
         };
-
-
-        console.log({ dep: getDependencyConditionalProps(controller, id) });
-
 
         // TODO: #condition add alternative controller from state management
         useEffect(() => { getConditionalProps(controller, id); }, [getDependencyConditionalProps(controller, id)]);
