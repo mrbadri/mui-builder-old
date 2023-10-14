@@ -11,10 +11,11 @@ export interface TCol {
 
 export type TQuery = Omit<UseQueryOptions, 'initialData'> & { initialData?: () => undefined };
 
-export type TQueryOPtions = Omit<UseQueryOptions<unknown, any, any, any>, 'initialData' | 'onError' | 'onSuccess'> & {
+export type TQueryOPtions = Omit<UseQueryOptions<unknown, any, any, any>, 'initialData' | 'onError' | 'onSuccess' | 'enabled'> & {
   initialData?: (() => undefined) | undefined;
   onError?: string | ((data: any) => void);
   onSuccess?: string | ((data: any) => void);
+  enabled?: string | boolean;
 };
 
 export type TApiConfig = AxiosRequestConfig<any>;

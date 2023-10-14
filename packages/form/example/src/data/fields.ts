@@ -10,6 +10,21 @@ const FieldText1 = {
     }`,
     dependency: 'return controller?.forms?.[controller.formId]?.getValues().multiSelect2',
   },
+
+  api: {
+    config: {
+      url: 'return "https://jsonplaceholder.typicode.com/todo8888s/" + controller?.forms[controller.formId].getValues().FieldText1; ',
+      // params: { id: 1 },
+      method: 'post',
+      data: "console.log('test form value' , controller?.forms[controller.formId].getValues());  return controller?.forms[controller.formId].getValues();",
+    },
+    query: {
+      onError:
+        " if (controller?.updateField) controller?.updateField({formId:controller?.formId, id:'multiSelect2' ,field: { label: 'testHook49999999'  }});",
+      enabled: 'return controller?.forms?.[controller.formId]?.getValues()?.FieldText1 == 1;',
+    },
+  },
+
   rules: {
     // minLength: {
     //   value: 10,
@@ -96,7 +111,7 @@ const multiSelect = {
         ]} 
       })
     }`,
-    
+
     dependency: `return controller?.forms?.[controller.formId]?.getValues().FieldText1`,
   },
   options: [

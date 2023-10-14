@@ -8,6 +8,7 @@ import convertFunction from '../../utils/convertFuunction/convertFuunction';
 import FieldBuilder from './FieldBuilder/FieldBuilder';
 import { TFieldsProps } from './Fields.types';
 import useController from '../../hooks/useController/useController';
+import useCustomQuery from '../../hooks/customQuery/useCustomQuery';
 
 // import { getLIstWatch } from './Fields.tools';
 
@@ -34,13 +35,26 @@ const Fields = ({ formId }: TFieldsProps) => {
     <>
       {Object.keys(currentFormFields).map((id: string): any => {
         // DESTRUCTURE PROPS
-        const { col = {}, script, rules, ...fieldProps } = currentFormFields[id];
+        const { col = {}, script, rules, api, ...fieldProps } = currentFormFields[id];
         const { xs = 12, sm, md, lg } = col;
         const getConditionalProps = convertFunction(script?.fn, "controller", "fieldId");
         const getDependencyConditionalProps = convertFunction(script?.dependency, "controller", 'fieldId');
 
-        console.log({dep:getDependencyConditionalProps(controller, id)});
-        
+        if (api) {
+          useCustomQuery(
+            api?.config || {},
+            formId,
+            {
+              queryKey: ['Fields API Call', id],
+              ...api?.query
+            });
+
+          console.log({ api });
+        };
+
+
+        console.log({ dep: getDependencyConditionalProps(controller, id) });
+
 
         // TODO: #condition add alternative controller from state management
         useEffect(() => { getConditionalProps(controller, id); }, [getDependencyConditionalProps(controller, id)]);

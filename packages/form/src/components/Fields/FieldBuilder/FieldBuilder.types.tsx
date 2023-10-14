@@ -1,6 +1,7 @@
 import { FieldValues, RegisterOptions } from 'react-hook-form';
 import { TForm } from '../../../hooks/formController/formController.types';
 import { TFormId } from '../../Forms/FormBuilder/FormBuilder.types';
+import { TApi } from '../../../types/public';
 
 export interface TFieldBuilderProps {
   type: FIELD_TYPE | 'config';
@@ -8,7 +9,7 @@ export interface TFieldBuilderProps {
   // TODO: change type
   name: string;
   id: string;
-  formid:  TFormId;
+  formid: TFormId;
 }
 
 export interface TConfig {
@@ -39,6 +40,7 @@ export interface TController {
 export interface TFieldProps {
   label?: string;
   type: string;
+  api?: TApi;
   id: string;
   rules?: TFieldRules;
   script?: TController;
