@@ -2,7 +2,7 @@ import { useConfig } from '../config/useConfig';
 import { useQuery } from '@tanstack/react-query';
 import { enabledController } from './useCustomQuery.tools';
 import { TUseCustomQueryProps } from './useCustomQuery.types';
-import convertFunction from '../../utils/convertFuunction/convertFuunction';
+import convertFunction from '../../utils/convertFunction/convertFunction';
 import handleQueryFn from '../../utils/handleQueryFn/handleQueryFn';
 import useController from '../useController/useController';
 

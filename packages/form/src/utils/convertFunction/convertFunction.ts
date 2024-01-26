@@ -1,4 +1,4 @@
-import { TConvertFunctionProps } from './convertFuunction.types';
+import { TConvertFunctionProps } from './convertFunction.types';
 
 const convertFunction = (fn: TConvertFunctionProps, ...props: string[]) => {
   if (!fn)

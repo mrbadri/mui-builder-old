@@ -2,7 +2,7 @@
 const FieldText1 = {
   label: 'Email',
   type: 'text',
-  col: { xs: 9 },
+  col: { xs: 12, md: 6, lg: 3 },
   script: {
     fn: `
     if(controller?.forms?.[controller.formId]?.getValues()?.multiSelect2?.[0]?.value === 1) {
@@ -16,7 +16,7 @@ const FieldText1 = {
       url: 'return "https://jsonplaceholder.typicode.com/todo8888s/" + controller?.forms[controller.formId].getValues().FieldText1; ',
       // params: { id: 1 },
       method: 'post',
-      data: "return controller?.forms[controller.formId].getValues();",
+      data: 'return controller?.forms[controller.formId].getValues();',
     },
     query: {
       onError:
@@ -182,3 +182,47 @@ export const fieldsSampleOne = {
 //     }
 //   ]
 // }
+
+const Grid = {
+  actions: [
+    {
+      type: 1,
+    },
+  ],
+  column: [
+    {
+      rowId: 10,
+      label: 'col1',
+      type: '',
+      sort: {
+        type: 'number | date',
+      },
+    },
+  ],
+  body: [
+    {
+      id: 10,
+      type: '',
+      script: '',
+      action: '',
+    },
+  ],
+  footer: [],
+  config: {
+    hasPagination: true,
+  },
+};
+
+const data = {
+  nationalCode: {
+    type: 'text',
+    label: 'کدملی',
+    rule: {
+      minLength: {
+        value: 10,
+        message: 'Minimum length is 10',
+      },
+      require: '',
+    },
+  },
+};

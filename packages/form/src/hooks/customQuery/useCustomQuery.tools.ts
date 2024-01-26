@@ -1,4 +1,4 @@
-import convertFunction from '../../utils/convertFuunction/convertFuunction';
+import convertFunction from '../../utils/convertFunction/convertFunction';
 import { TController } from '../useController/useController.types';
 
 export const enabledController = (enabled: boolean | string | undefined = false, controller: TController) => {

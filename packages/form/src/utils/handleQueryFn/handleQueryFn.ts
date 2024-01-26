@@ -1,4 +1,4 @@
-import convertFunction from '../convertFuunction/convertFuunction';
+import convertFunction from '../convertFunction/convertFunction';
 import isStringFunction from '../isStringFunction/isStringFunction';
 
 // TODO #type

@@ -4,7 +4,7 @@ import Grid2 from '@mui/material/Unstable_Grid2/Grid2';
 import { Controller } from 'react-hook-form';
 import useFieldsStore from '../../hooks/useFieldsStore/useFieldsStore';
 import useFromsStore from '../../hooks/useFormsStore/useFormsStore';
-import convertFunction from '../../utils/convertFuunction/convertFuunction';
+import convertFunction from '../../utils/convertFunction/convertFunction';
 import FieldBuilder from './FieldBuilder/FieldBuilder';
 import { TFieldsProps } from './Fields.types';
 import useController from '../../hooks/useController/useController';
